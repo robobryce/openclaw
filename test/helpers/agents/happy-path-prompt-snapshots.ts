@@ -350,6 +350,7 @@ function createDynamicTools(params: {
   return codexApi.createCodexDynamicToolSpecsForPromptSnapshot({
     tools: normalized.filter((tool) => HAPPY_PATH_TOOL_NAMES.has(tool.name)),
     pluginConfig: { codexDynamicToolsProfile: "native-first" },
+    directToolNames: ["message"],
   });
 }
 
@@ -788,7 +789,7 @@ function renderReadme(scenarios: PromptScenario[]): string {
 
 export function createHappyPathPromptSnapshotFiles(): PromptSnapshotFile[] {
   const scenarios = createScenarios();
-  return [
+  const files = [
     {
       path: path.join(CODEX_RUNTIME_HAPPY_PATH_PROMPT_SNAPSHOT_DIR, "README.md"),
       content: renderReadme(scenarios),
@@ -801,8 +802,9 @@ export function createHappyPathPromptSnapshotFiles(): PromptSnapshotFile[] {
       path: path.join(CODEX_RUNTIME_HAPPY_PATH_PROMPT_SNAPSHOT_DIR, scenario.toolSnapshotFile),
       content: stableJson(scenario.dynamicTools),
     })),
-  ].map((file) => ({
-    ...file,
+  ];
+  return files.map((file) => ({
+    path: file.path,
     content: file.content.endsWith("\n") ? file.content : `${file.content}\n`,
   }));
 }

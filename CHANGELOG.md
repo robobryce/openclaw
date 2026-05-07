@@ -6,6 +6,7 @@ Docs: https://docs.openclaw.ai
 
 ### Changes
 
+- Codex app-server: pin the managed Codex harness and Codex CLI smoke package to `@openai/codex@0.129.0-alpha.15` and defer OpenClaw integration dynamic tools behind Codex tool search by default, saving roughly 5.5k upfront dynamic-tool tokens on source-reply Codex turns while keeping `codexDynamicToolsLoading: "direct"` as a compatibility escape hatch.
 - Discord/voice: stream ElevenLabs TTS directly into Discord playback and send ElevenLabs latency optimization as the documented query parameter so spoken replies can start sooner.
 - Discord/voice: keep TTS playback running when another user starts speaking, ignore new capture during playback to avoid feedback loops, and downgrade expected receive-stream aborts to verbose diagnostics.
 - Telegram: treat successful same-chat `message` tool outbound sends during an inbound telegram turn as delivered when deciding whether to emit the rewritten silent reply fallback (#78685). Thanks @neeravmakwana.
