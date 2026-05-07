@@ -237,6 +237,15 @@ const mattermostMessageActions: ChannelMessageActionAdapter = {
   },
 };
 
+function shouldTreatMattermostDeliveredTextAsVisible(params: {
+  kind: "tool" | "block" | "final";
+  text?: string;
+}): boolean {
+  return (
+    params.kind === "block" && typeof params.text === "string" && params.text.trim().length > 0
+  );
+}
+
 function parseMattermostReactActionParams(params: Record<string, unknown>): {
   postId: string;
   emojiName: string;
@@ -449,6 +458,7 @@ export const mattermostPlugin: ChannelPlugin<ResolvedMattermostAccount> = create
         }
         return { ok: true, to: trimmed };
       },
+      shouldTreatDeliveredTextAsVisible: shouldTreatMattermostDeliveredTextAsVisible,
     },
     attachedResults: {
       channel: "mattermost",
