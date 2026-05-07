@@ -15,7 +15,7 @@ import type {
 } from "../../channels/plugins/types.public.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { listExplicitConfiguredChannelIdsForConfig } from "../../plugins/channel-plugin-ids.js";
-import { resolveOfficialExternalPluginRepairHint } from "../../plugins/official-external-plugin-repair-hints.js";
+import { resolveMissingOfficialExternalChannelPluginRepairHint } from "../../plugins/official-external-plugin-repair-hints.js";
 import { asRecord } from "../../shared/record-coerce.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import {
@@ -496,7 +496,11 @@ export async function buildChannelsTable(
     if (visibleChannelIds.has(channelId)) {
       continue;
     }
-    const hint = resolveOfficialExternalPluginRepairHint(channelId);
+    const hint = resolveMissingOfficialExternalChannelPluginRepairHint({
+      config: cfg,
+      activationSourceConfig: sourceConfig,
+      channelId,
+    });
     if (!hint || hint.channelId !== channelId) {
       continue;
     }

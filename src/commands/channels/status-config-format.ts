@@ -12,7 +12,7 @@ import type { OpenClawConfig } from "../../config/config.js";
 import { listExplicitConfiguredChannelIdsForConfig } from "../../plugins/channel-plugin-ids.js";
 import {
   type OfficialExternalPluginRepairHint,
-  resolveOfficialExternalPluginRepairHint,
+  resolveMissingOfficialExternalChannelPluginRepairHint,
 } from "../../plugins/official-external-plugin-repair-hints.js";
 import { formatDocsLink } from "../../terminal/links.js";
 import { theme } from "../../terminal/theme.js";
@@ -111,7 +111,11 @@ export async function formatConfigChannelsStatusLines(
     if (visibleChannelIds.has(channelId)) {
       continue;
     }
-    const hint = resolveOfficialExternalPluginRepairHint(channelId);
+    const hint = resolveMissingOfficialExternalChannelPluginRepairHint({
+      config: cfg,
+      activationSourceConfig: sourceConfig,
+      channelId,
+    });
     if (!hint?.channelId || visibleChannelIds.has(hint.channelId)) {
       continue;
     }

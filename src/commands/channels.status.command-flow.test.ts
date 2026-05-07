@@ -12,6 +12,7 @@ const mocks = vi.hoisted(() => ({
   requireValidConfigSnapshot: vi.fn(),
   listChannelPlugins: vi.fn(),
   listConfiguredChannelIdsForReadOnlyScope: vi.fn((_params: unknown) => ["discord"]),
+  missingOfficialExternalChannels: new Set<string>(),
   withProgress: vi.fn(async (_opts: unknown, run: () => Promise<unknown>) => await run()),
 }));
 
@@ -40,6 +41,22 @@ vi.mock("../plugins/channel-plugin-ids.js", () => ({
     Object.keys(config.channels ?? {}),
   listConfiguredChannelIdsForReadOnlyScope: (params: unknown) =>
     mocks.listConfiguredChannelIdsForReadOnlyScope(params),
+}));
+
+vi.mock("../plugins/official-external-plugin-repair-hints.js", () => ({
+  resolveMissingOfficialExternalChannelPluginRepairHint: ({ channelId }: { channelId: string }) =>
+    mocks.missingOfficialExternalChannels.has(channelId)
+      ? {
+          pluginId: channelId,
+          channelId,
+          label: "Feishu",
+          installSpec: "@openclaw/feishu",
+          installCommand: "openclaw plugins install @openclaw/feishu",
+          doctorFixCommand: "openclaw doctor --fix",
+          repairHint:
+            "Install the official external plugin with: openclaw plugins install @openclaw/feishu, or run: openclaw doctor --fix.",
+        }
+      : null,
 }));
 
 vi.mock("./channels/shared.js", () => ({
@@ -186,6 +203,7 @@ describe("channelsStatusCommand SecretRef fallback flow", () => {
     mocks.readConfigFileSnapshot.mockClear();
     mocks.requireValidConfigSnapshot.mockReset();
     mocks.listChannelPlugins.mockReset();
+    mocks.missingOfficialExternalChannels.clear();
     mocks.listConfiguredChannelIdsForReadOnlyScope.mockClear();
     mocks.listConfiguredChannelIdsForReadOnlyScope.mockReturnValue(["discord"]);
     mocks.withProgress.mockClear();
@@ -252,6 +270,7 @@ describe("channelsStatusCommand SecretRef fallback flow", () => {
       effectiveConfig: { channels: { feishu: { appId: "cli_xxx" } } },
       diagnostics: [],
     });
+    mocks.missingOfficialExternalChannels.add("feishu");
     mocks.listChannelPlugins.mockReturnValue([]);
     const { runtime, logs } = createCapturingTestRuntime();
 

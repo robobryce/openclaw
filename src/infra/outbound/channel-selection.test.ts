@@ -3,6 +3,7 @@ import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   listChannelPlugins: vi.fn(),
   resolveOutboundChannelPlugin: vi.fn(),
+  missingOfficialExternalChannels: new Set<string>(),
 }));
 
 const deliverableChannelIds = vi.hoisted(() => [
@@ -29,6 +30,21 @@ vi.mock("../../utils/message-channel.js", () => ({
 
 vi.mock("./channel-resolution.js", () => ({
   resolveOutboundChannelPlugin: mocks.resolveOutboundChannelPlugin,
+}));
+
+vi.mock("../../plugins/official-external-plugin-repair-hints.js", () => ({
+  resolveMissingOfficialExternalChannelPluginRepairHint: ({ channelId }: { channelId: string }) =>
+    mocks.missingOfficialExternalChannels.has(channelId)
+      ? {
+          pluginId: channelId,
+          channelId,
+          label: channelId === "whatsapp" ? "WhatsApp" : "Feishu",
+          installSpec: `@openclaw/${channelId}`,
+          installCommand: `openclaw plugins install @openclaw/${channelId}`,
+          doctorFixCommand: "openclaw doctor --fix",
+          repairHint: `Install the official external plugin with: openclaw plugins install @openclaw/${channelId}, or run: openclaw doctor --fix.`,
+        }
+      : null,
 }));
 
 type ChannelSelectionModule = typeof import("./channel-selection.js");
@@ -153,6 +169,7 @@ describe("resolveMessageChannelSelection", () => {
     mocks.resolveOutboundChannelPlugin.mockImplementation(({ channel }: { channel: string }) => ({
       id: channel,
     }));
+    mocks.missingOfficialExternalChannels.clear();
   });
 
   it.each([
@@ -243,6 +260,7 @@ describe("resolveMessageChannelSelection", () => {
     {
       setup: () => {
         mocks.resolveOutboundChannelPlugin.mockReturnValue(undefined);
+        mocks.missingOfficialExternalChannels.add("feishu");
       },
       params: {
         cfg: { channels: { feishu: { appId: "cli_xxx" } } } as never,
@@ -258,6 +276,7 @@ describe("resolveMessageChannelSelection", () => {
     {
       setup: () => {
         mocks.resolveOutboundChannelPlugin.mockReturnValue(undefined);
+        mocks.missingOfficialExternalChannels.add("whatsapp");
       },
       params: { cfg: { channels: { whatsapp: { enabled: true } } } as never },
       expectedMessage:

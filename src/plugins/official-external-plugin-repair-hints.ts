@@ -1,3 +1,5 @@
+import type { OpenClawConfig } from "../config/types.openclaw.js";
+import { resolveConfiguredChannelPresencePolicy } from "./channel-plugin-ids.js";
 import {
   getOfficialExternalPluginCatalogEntry,
   getOfficialExternalPluginCatalogManifest,
@@ -46,4 +48,30 @@ export function resolveOfficialExternalPluginRepairHint(
     doctorFixCommand,
     repairHint: `Install the official external plugin with: ${installCommand}, or run: ${doctorFixCommand}.`,
   };
+}
+
+export function resolveMissingOfficialExternalChannelPluginRepairHint(params: {
+  config: OpenClawConfig;
+  activationSourceConfig?: OpenClawConfig;
+  channelId: string;
+  workspaceDir?: string;
+  env?: NodeJS.ProcessEnv;
+}): OfficialExternalPluginRepairHint | null {
+  const hint = resolveOfficialExternalPluginRepairHint(params.channelId);
+  if (!hint?.channelId || hint.channelId !== params.channelId) {
+    return null;
+  }
+  const policy = resolveConfiguredChannelPresencePolicy({
+    config: params.config,
+    activationSourceConfig: params.activationSourceConfig,
+    workspaceDir: params.workspaceDir,
+    env: params.env,
+    includePersistedAuthState: false,
+  }).find((entry) => entry.channelId === hint.channelId);
+  if (!policy || policy.effective) {
+    return null;
+  }
+  return policy.blockedReasons.length === 1 && policy.blockedReasons[0] === "no-channel-owner"
+    ? hint
+    : null;
 }

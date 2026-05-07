@@ -3,7 +3,7 @@ import type { ChannelPlugin } from "../../channels/plugins/types.plugin.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import {
   type OfficialExternalPluginRepairHint,
-  resolveOfficialExternalPluginRepairHint,
+  resolveMissingOfficialExternalChannelPluginRepairHint,
 } from "../../plugins/official-external-plugin-repair-hints.js";
 import { defaultRuntime } from "../../runtime.js";
 import {
@@ -69,15 +69,6 @@ function isConfiguredChannel(cfg: OpenClawConfig, channelId: string): boolean {
   return (entry as { enabled?: unknown }).enabled !== false;
 }
 
-function hasAvailableChannelPlugin(cfg: OpenClawConfig, channelId: string): boolean {
-  return Boolean(
-    resolveOutboundChannelPlugin({
-      channel: channelId,
-      cfg,
-    }),
-  );
-}
-
 function listConfiguredOfficialExternalRepairHints(
   cfg: OpenClawConfig,
 ): OfficialExternalPluginRepairHint[] {
@@ -87,16 +78,13 @@ function listConfiguredOfficialExternalRepairHints(
   }
   return Object.keys(channels)
     .filter((channelId) => isConfiguredChannel(cfg, channelId))
-    .filter((channelId) => !hasAvailableChannelPlugin(cfg, channelId))
-    .map((channelId) => resolveOfficialExternalPluginRepairHint(channelId))
-    .filter((hint): hint is OfficialExternalPluginRepairHint => {
-      const channelId = hint?.channelId;
-      return (
-        typeof channelId === "string" &&
-        isConfiguredChannel(cfg, channelId) &&
-        !hasAvailableChannelPlugin(cfg, channelId)
-      );
-    });
+    .map((channelId) =>
+      resolveMissingOfficialExternalChannelPluginRepairHint({
+        config: cfg,
+        channelId,
+      }),
+    )
+    .filter((hint): hint is OfficialExternalPluginRepairHint => Boolean(hint));
 }
 
 function formatMissingOfficialExternalChannelsMessage(
@@ -235,7 +223,10 @@ export async function resolveMessageChannelSelection(params: {
         throw new Error(`Unknown channel: ${normalized}`);
       }
       const repairHint = isConfiguredChannel(params.cfg, normalized)
-        ? resolveOfficialExternalPluginRepairHint(normalized)
+        ? resolveMissingOfficialExternalChannelPluginRepairHint({
+            config: params.cfg,
+            channelId: normalized,
+          })
         : null;
       if (repairHint?.channelId === normalized) {
         throw new Error(`Channel is unavailable: ${normalized}. ${repairHint.repairHint}`);
