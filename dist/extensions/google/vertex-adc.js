@@ -1,0 +1,2 @@
+import { i as resolveGoogleVertexAuthorizedUserHeaders, n as isGoogleVertexCredentialsMarker, r as resetGoogleVertexAuthorizedUserTokenCacheForTest, t as hasGoogleVertexAuthorizedUserAdcSync } from "../../vertex-adc-DbAZ8fTO.js";
+export { hasGoogleVertexAuthorizedUserAdcSync, isGoogleVertexCredentialsMarker, resetGoogleVertexAuthorizedUserTokenCacheForTest, resolveGoogleVertexAuthorizedUserHeaders };
