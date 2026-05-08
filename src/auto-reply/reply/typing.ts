@@ -26,7 +26,13 @@ export function createTypingController(params: {
     onReplyStart,
     onCleanup,
     typingIntervalSeconds = 6,
-    typingTtlMs = 2 * 60_000,
+    // Default TTL is 0 (disabled). Long-running agents (multi-minute tool
+    // sessions) need the indicator to stay alive as long as work is in
+    // flight; the natural-end-of-turn cleanup path (markRunComplete +
+    // markDispatchIdle, with a 10s grace window) handles teardown.
+    // Channels can still pass an explicit typingTtlMs to opt back into a
+    // safety cap.
+    typingTtlMs = 0,
     silentToken = SILENT_REPLY_TOKEN,
     log,
   } = params;

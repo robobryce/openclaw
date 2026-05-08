@@ -16,7 +16,11 @@ export type CreateTypingCallbacksParams = {
   keepaliveIntervalMs?: number;
   /** Stop keepalive after this many consecutive start() failures. Default: 2 */
   maxConsecutiveFailures?: number;
-  /** Maximum duration for typing indicator before auto-cleanup (safety TTL). Default: 60s */
+  /** Maximum duration for typing indicator before auto-cleanup (safety TTL).
+   *  Default: 0 (disabled). Channels that need a safety cap pass an explicit
+   *  value (e.g. Discord, MS Teams). Without one, the indicator runs as long
+   *  as the agent is producing output — long-running tool sessions need this
+   *  so the user can see the agent is still working. */
   maxDurationMs?: number;
 };
 
@@ -24,7 +28,7 @@ export function createTypingCallbacks(params: CreateTypingCallbacksParams): Typi
   const stop = params.stop;
   const keepaliveIntervalMs = params.keepaliveIntervalMs ?? 3_000;
   const maxConsecutiveFailures = Math.max(1, params.maxConsecutiveFailures ?? 2);
-  const maxDurationMs = params.maxDurationMs ?? 60_000; // Default 60s TTL
+  const maxDurationMs = params.maxDurationMs ?? 0;
   let stopSent = false;
   let closed = false;
   let ttlTimer: ReturnType<typeof setTimeout> | undefined;
