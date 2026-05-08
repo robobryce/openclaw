@@ -1,0 +1,42 @@
+import "./zod-schema.core-DgG4bWc7.js";
+import { t as createLazyFacadeObjectValue } from "./facade-loader-DbqpecgQ.js";
+import { n as loadActivatedBundledPluginPublicSurfaceModuleSync, t as createLazyFacadeValue } from "./facade-runtime-CKRLxtAf.js";
+//#region src/plugin-sdk/tts-runtime.ts
+function loadFacadeModule() {
+	return loadActivatedBundledPluginPublicSurfaceModuleSync({
+		dirName: "speech-core",
+		artifactBasename: "runtime-api.js"
+	});
+}
+const _test = createLazyFacadeObjectValue(() => loadFacadeModule()._test);
+const buildTtsSystemPromptHint = createLazyFacadeValue(loadFacadeModule, "buildTtsSystemPromptHint");
+const getLastTtsAttempt = createLazyFacadeValue(loadFacadeModule, "getLastTtsAttempt");
+const getResolvedSpeechProviderConfig = createLazyFacadeValue(loadFacadeModule, "getResolvedSpeechProviderConfig");
+const getTtsMaxLength = createLazyFacadeValue(loadFacadeModule, "getTtsMaxLength");
+const getTtsPersona = createLazyFacadeValue(loadFacadeModule, "getTtsPersona");
+const getTtsProvider = createLazyFacadeValue(loadFacadeModule, "getTtsProvider");
+const isSummarizationEnabled = createLazyFacadeValue(loadFacadeModule, "isSummarizationEnabled");
+const isTtsEnabled = createLazyFacadeValue(loadFacadeModule, "isTtsEnabled");
+const isTtsProviderConfigured = createLazyFacadeValue(loadFacadeModule, "isTtsProviderConfigured");
+const listSpeechVoices = createLazyFacadeValue(loadFacadeModule, "listSpeechVoices");
+const listTtsPersonas = createLazyFacadeValue(loadFacadeModule, "listTtsPersonas");
+const maybeApplyTtsToPayload = createLazyFacadeValue(loadFacadeModule, "maybeApplyTtsToPayload");
+const resolveExplicitTtsOverrides = createLazyFacadeValue(loadFacadeModule, "resolveExplicitTtsOverrides");
+const resolveTtsAutoMode = createLazyFacadeValue(loadFacadeModule, "resolveTtsAutoMode");
+const resolveTtsConfig = createLazyFacadeValue(loadFacadeModule, "resolveTtsConfig");
+const resolveTtsPrefsPath = createLazyFacadeValue(loadFacadeModule, "resolveTtsPrefsPath");
+const resolveTtsProviderOrder = createLazyFacadeValue(loadFacadeModule, "resolveTtsProviderOrder");
+const setLastTtsAttempt = createLazyFacadeValue(loadFacadeModule, "setLastTtsAttempt");
+const setSummarizationEnabled = createLazyFacadeValue(loadFacadeModule, "setSummarizationEnabled");
+const setTtsAutoMode = createLazyFacadeValue(loadFacadeModule, "setTtsAutoMode");
+const setTtsEnabled = createLazyFacadeValue(loadFacadeModule, "setTtsEnabled");
+const setTtsMaxLength = createLazyFacadeValue(loadFacadeModule, "setTtsMaxLength");
+const setTtsPersona = createLazyFacadeValue(loadFacadeModule, "setTtsPersona");
+const setTtsProvider = createLazyFacadeValue(loadFacadeModule, "setTtsProvider");
+const synthesizeSpeech = createLazyFacadeValue(loadFacadeModule, "synthesizeSpeech");
+const streamSpeech = createLazyFacadeValue(loadFacadeModule, "streamSpeech");
+const textToSpeech = createLazyFacadeValue(loadFacadeModule, "textToSpeech");
+const textToSpeechStream = createLazyFacadeValue(loadFacadeModule, "textToSpeechStream");
+const textToSpeechTelephony = createLazyFacadeValue(loadFacadeModule, "textToSpeechTelephony");
+//#endregion
+export { textToSpeechTelephony as A, setTtsMaxLength as C, synthesizeSpeech as D, streamSpeech as E, textToSpeech as O, setTtsEnabled as S, setTtsProvider as T, resolveTtsPrefsPath as _, getTtsMaxLength as a, setSummarizationEnabled as b, isSummarizationEnabled as c, listSpeechVoices as d, listTtsPersonas as f, resolveTtsConfig as g, resolveTtsAutoMode as h, getResolvedSpeechProviderConfig as i, textToSpeechStream as k, isTtsEnabled as l, resolveExplicitTtsOverrides as m, buildTtsSystemPromptHint as n, getTtsPersona as o, maybeApplyTtsToPayload as p, getLastTtsAttempt as r, getTtsProvider as s, _test as t, isTtsProviderConfigured as u, resolveTtsProviderOrder as v, setTtsPersona as w, setTtsAutoMode as x, setLastTtsAttempt as y };
