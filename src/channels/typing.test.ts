@@ -261,19 +261,19 @@ describe("createTypingCallbacks", () => {
       });
     });
 
-    it("uses default 60s TTL when not specified", async () => {
+    it("disables TTL by default (no auto-stop without explicit maxDurationMs)", async () => {
+      // Default changed from 60s to 0: long-running agents (multi-minute
+      // tool sessions) need typing to stay alive as long as work is in
+      // flight, not get capped to a fixed safety window. Channels that
+      // need a cap (Discord, MS Teams) opt in by passing an explicit
+      // maxDurationMs.
       await withFakeTimers(async () => {
         const { stop, callbacks } = createTypingHarness();
 
         await callbacks.onReplyStart();
 
-        // Should not stop at 59s
-        await vi.advanceTimersByTimeAsync(59_000);
+        await vi.advanceTimersByTimeAsync(10 * 60_000);
         expect(stop).not.toHaveBeenCalled();
-
-        // Should stop at 60s
-        await vi.advanceTimersByTimeAsync(1_000);
-        expect(stop).toHaveBeenCalledTimes(1);
       });
     });
 

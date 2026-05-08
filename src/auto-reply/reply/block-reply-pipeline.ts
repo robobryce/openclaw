@@ -1,5 +1,4 @@
 import { resolveSendableOutboundReplyParts } from "openclaw/plugin-sdk/reply-payload";
-import { logVerbose } from "../../globals.js";
 import { getReplyPayloadMetadata } from "../reply-payload.js";
 import type { ReplyPayload } from "../types.js";
 import { createBlockReplyCoalescer } from "./block-reply-coalescer.js";
@@ -75,6 +74,14 @@ const withTimeout = async <T>(
   }
 };
 
+const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
+
+// Exponential backoff capped at 30s. Sequence: 1s, 2s, 4s, 8s, 16s, 30s, 30s…
+const computeRetryBackoffMs = (attempt: number): number => {
+  const base = 1_000 * 2 ** Math.max(0, attempt - 1);
+  return Math.min(30_000, base);
+};
+
 export function createBlockReplyPipeline(params: {
   onBlockReply: (
     payload: ReplyPayload,
@@ -98,7 +105,6 @@ export function createBlockReplyPipeline(params: {
   let sendChain: Promise<void> = Promise.resolve();
   let aborted = false;
   let didStream = false;
-  let didLogTimeout = false;
 
   const hasSeenOrQueuedPayloadKey = (payloadKey: string) =>
     seenKeys.has(payloadKey) || sentKeys.has(payloadKey) || pendingKeys.has(payloadKey);
@@ -125,24 +131,57 @@ export function createBlockReplyPipeline(params: {
     }
     pendingKeys.add(payloadKey);
 
-    const timeoutError = new Error(`block reply delivery timed out after ${timeoutMs}ms`);
-    const abortController = new AbortController();
     sendChain = sendChain
       .then(async () => {
-        if (aborted) {
-          return false;
-        }
-        await withTimeout(
-          Promise.resolve(
-            onBlockReply(payload, {
-              abortSignal: abortController.signal,
+        // Retry-until-success delivery. The previous behavior — abort the
+        // entire pipeline (`aborted = true`) on the first 15s timeout —
+        // silently dropped every remaining chunk in the turn, which the
+        // user perceived as missing replies. Per the "no drops, ever"
+        // contract documented in gateroom issue #339, every retryable
+        // failure (timeout, transient network/Mattermost error) is
+        // retried with exponential backoff capped at 30s; ordering is
+        // preserved by the existing `sendChain` serialization.
+        //
+        // Trade-off: a permanently-bad payload (e.g., the upstream
+        // refuses it deterministically) head-of-lines the rest of the
+        // turn. We surface every retry via `console.warn` so a stuck
+        // chunk is visible in journalctl rather than silent.
+        let attempt = 0;
+        // eslint-disable-next-line no-constant-condition
+        while (true) {
+          attempt++;
+          const attemptAbort = new AbortController();
+          const timeoutError = new Error(
+            `block reply delivery timed out after ${timeoutMs}ms (attempt ${attempt})`,
+          );
+          try {
+            await withTimeout(
+              Promise.resolve(
+                onBlockReply(payload, {
+                  abortSignal: attemptAbort.signal,
+                  timeoutMs,
+                }),
+              ),
               timeoutMs,
-            }),
-          ),
-          timeoutMs,
-          timeoutError,
-        );
-        return true;
+              timeoutError,
+            );
+            if (attempt > 1) {
+              console.info(
+                `[block-reply-pipeline] delivered on attempt ${attempt} (after ${attempt - 1} retries)`,
+              );
+            }
+            return true;
+          } catch (err) {
+            // Cancel the in-flight upstream call so a slow delivery doesn't
+            // race the retry's fresh call.
+            attemptAbort.abort();
+            const wait = computeRetryBackoffMs(attempt);
+            console.warn(
+              `[block-reply-pipeline] delivery attempt ${attempt} failed: ${String(err)}; retrying in ${wait}ms`,
+            );
+            await sleep(wait);
+          }
+        }
       })
       .then((didSend) => {
         if (!didSend) {
@@ -160,18 +199,10 @@ export function createBlockReplyPipeline(params: {
         didStream = true;
       })
       .catch((err) => {
-        if (err === timeoutError) {
-          abortController.abort();
-          aborted = true;
-          if (!didLogTimeout) {
-            didLogTimeout = true;
-            logVerbose(
-              `block reply delivery timed out after ${timeoutMs}ms; skipping remaining block replies to preserve ordering`,
-            );
-          }
-          return;
-        }
-        logVerbose(`block reply delivery failed: ${String(err)}`);
+        // The retry loop above exits only via successful `return true`,
+        // so reaching this branch is a programmer-level surprise (e.g.
+        // the loop itself threw synchronously). Don't silently drop.
+        console.error(`[block-reply-pipeline] unexpected pipeline error: ${String(err)}`);
       })
       .finally(() => {
         pendingKeys.delete(payloadKey);

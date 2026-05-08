@@ -134,16 +134,25 @@ describe("createBlockReplyPipeline dedup with threading", () => {
 });
 
 describe("createBlockReplyPipeline content coverage dedup", () => {
-  it("matches final assembled text to successfully streamed text chunks after abort", async () => {
-    let callCount = 0;
+  it("retries timed-out deliveries until success and credits all streamed fragments", async () => {
+    // Per the no-drop contract: a transient send timeout retries with
+    // backoff (1s, 2s, ...) instead of aborting the rest of the queue.
+    // We arrange chunk 3 to time out on its first attempt and succeed
+    // on retry, then assert all three chunks' content was streamed.
+    const slowAttempts = new Map<string, number>();
     const pipeline = createBlockReplyPipeline({
-      onBlockReply: async () => {
-        callCount += 1;
-        if (callCount === 3) {
-          await new Promise((resolve) => setTimeout(resolve, 50));
+      onBlockReply: async (payload) => {
+        const text = payload.text ?? "";
+        if (text === "Third paragraph.") {
+          const seen = slowAttempts.get(text) ?? 0;
+          slowAttempts.set(text, seen + 1);
+          if (seen === 0) {
+            // First attempt: longer than timeoutMs → triggers retry.
+            await new Promise((resolve) => setTimeout(resolve, 80));
+          }
         }
       },
-      timeoutMs: 1,
+      timeoutMs: 30,
     });
 
     pipeline.enqueue({ text: "First paragraph." });
@@ -152,30 +161,14 @@ describe("createBlockReplyPipeline content coverage dedup", () => {
     await pipeline.flush({ force: true });
 
     expect(pipeline.didStream()).toBe(true);
-    expect(pipeline.isAborted()).toBe(true);
-    expect(pipeline.hasSentPayload({ text: "First paragraph.\n\nSecond paragraph." })).toBe(true);
-  });
-
-  it("does not match final assembled text with content that was not streamed", async () => {
-    let callCount = 0;
-    const pipeline = createBlockReplyPipeline({
-      onBlockReply: async () => {
-        callCount += 1;
-        if (callCount === 2) {
-          await new Promise((resolve) => setTimeout(resolve, 50));
-        }
-      },
-      timeoutMs: 1,
-    });
-
-    pipeline.enqueue({ text: "First paragraph." });
-    pipeline.enqueue({ text: "Second paragraph." });
-    await pipeline.flush({ force: true });
-
-    expect(pipeline.didStream()).toBe(true);
-    expect(pipeline.isAborted()).toBe(true);
-    expect(pipeline.hasSentPayload({ text: "First paragraph.\n\nSecond paragraph." })).toBe(false);
-  });
+    expect(pipeline.isAborted()).toBe(false);
+    expect(slowAttempts.get("Third paragraph.")).toBe(2);
+    expect(
+      pipeline.hasSentPayload({
+        text: "First paragraph.\n\nSecond paragraph.\n\nThird paragraph.",
+      }),
+    ).toBe(true);
+  }, 10_000);
 
   it("does not suppress media payloads through streamed text coverage", async () => {
     const pipeline = createBlockReplyPipeline({
