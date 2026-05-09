@@ -2049,39 +2049,51 @@ async function monitorMattermostProvider(opts = {}) {
 					humanDelay: core.channel.reply.resolveHumanDelayConfig(cfg, route.agentId),
 					typingCallbacks,
 					deliver: async (payload, info) => {
-						await deliverMattermostReplyWithDraftPreview({
-							payload,
-							info,
-							kind,
-							client,
-							draftStream,
-							effectiveReplyToId,
-							resolvePreviewFinalText,
-							previewState,
-							logVerboseMessage,
-							deliverFinal: async () => {
-								await deliverMattermostReplyPayload({
-									core,
-									cfg,
+						let attempt = 0;
+						while (true) {
+							attempt++;
+							try {
+								await deliverMattermostReplyWithDraftPreview({
 									payload,
-									to,
-									accountId: account.accountId,
-									agentId: route.agentId,
-									replyToId: resolveMattermostReplyRootId({
-										kind,
-										threadRootId: effectiveReplyToId,
-										replyToId: payload.replyToId
-									}),
-									textLimit,
-									tableMode,
-									sendMessage: sendMessageMattermost
+									info,
+									kind,
+									client,
+									draftStream,
+									effectiveReplyToId,
+									resolvePreviewFinalText,
+									previewState,
+									logVerboseMessage,
+									deliverFinal: async () => {
+										await deliverMattermostReplyPayload({
+											core,
+											cfg,
+											payload,
+											to,
+											accountId: account.accountId,
+											agentId: route.agentId,
+											replyToId: resolveMattermostReplyRootId({
+												kind,
+												threadRootId: effectiveReplyToId,
+												replyToId: payload.replyToId
+											}),
+											textLimit,
+											tableMode,
+											sendMessage: sendMessageMattermost
+										});
+										runtime.log?.(`delivered reply to ${to}`);
+									}
 								});
-								runtime.log?.(`delivered reply to ${to}`);
+								if (attempt > 1) runtime.log?.(`mattermost ${info.kind} reply delivered on attempt ${attempt} (after ${attempt - 1} retries)`);
+								return;
+							} catch (err) {
+								const wait = Math.min(3e4, 1e3 * 2 ** Math.max(0, attempt - 1));
+								runtime.warn?.(`mattermost ${info.kind} reply attempt ${attempt} failed: ${String(err)}; retrying in ${wait}ms`);
+								await new Promise((resolve) => setTimeout(resolve, wait));
 							}
-						});
+						}
 					},
 					onError: (err, info) => {
-						runtime.error?.(`mattermost ${info.kind} reply failed: ${String(err)}`);
+						runtime.error?.(`mattermost ${info.kind} reply failed (programmer-level): ${String(err)}`);
 					}
 				});
 				let dispatchSettledBeforeStart = false;

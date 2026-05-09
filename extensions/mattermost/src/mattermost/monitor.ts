@@ -1739,39 +1739,76 @@ export async function monitorMattermostProvider(opts: MonitorMattermostOpts = {}
             humanDelay: core.channel.reply.resolveHumanDelayConfig(cfg, route.agentId),
             typingCallbacks,
             deliver: async (payload: ReplyPayload, info) => {
-              await deliverMattermostReplyWithDraftPreview({
-                payload,
-                info,
-                kind,
-                client,
-                draftStream,
-                effectiveReplyToId,
-                resolvePreviewFinalText,
-                previewState,
-                logVerboseMessage,
-                deliverFinal: async () => {
-                  await deliverMattermostReplyPayload({
-                    core,
-                    cfg,
+              // Retry-until-success at the actual MM POST layer.
+              // openclaw's reply-dispatcher already retries-via-onError
+              // is wrong: onError just logs and the chunk is lost. The
+              // gateroom no-drop contract (#339) requires durable
+              // delivery — a transient MM connection failure
+              // (websocket pong timeout, fetch failed, 5xx) must not
+              // drop the chunk silently. We retry with exponential
+              // backoff capped at 30 s. Surfacing every retry via
+              // runtime.warn so a chunk stuck in an outage is visible
+              // in the operator's journal rather than silent.
+              let attempt = 0;
+              // eslint-disable-next-line no-constant-condition
+              while (true) {
+                attempt++;
+                try {
+                  await deliverMattermostReplyWithDraftPreview({
                     payload,
-                    to,
-                    accountId: account.accountId,
-                    agentId: route.agentId,
-                    replyToId: resolveMattermostReplyRootId({
-                      kind,
-                      threadRootId: effectiveReplyToId,
-                      replyToId: payload.replyToId,
-                    }),
-                    textLimit,
-                    tableMode,
-                    sendMessage: sendMessageMattermost,
+                    info,
+                    kind,
+                    client,
+                    draftStream,
+                    effectiveReplyToId,
+                    resolvePreviewFinalText,
+                    previewState,
+                    logVerboseMessage,
+                    deliverFinal: async () => {
+                      await deliverMattermostReplyPayload({
+                        core,
+                        cfg,
+                        payload,
+                        to,
+                        accountId: account.accountId,
+                        agentId: route.agentId,
+                        replyToId: resolveMattermostReplyRootId({
+                          kind,
+                          threadRootId: effectiveReplyToId,
+                          replyToId: payload.replyToId,
+                        }),
+                        textLimit,
+                        tableMode,
+                        sendMessage: sendMessageMattermost,
+                      });
+                      runtime.log?.(`delivered reply to ${to}`);
+                    },
                   });
-                  runtime.log?.(`delivered reply to ${to}`);
-                },
-              });
+                  if (attempt > 1) {
+                    runtime.log?.(
+                      `mattermost ${info.kind} reply delivered on attempt ${attempt}` +
+                        ` (after ${attempt - 1} retries)`,
+                    );
+                  }
+                  return;
+                } catch (err) {
+                  const wait = Math.min(30_000, 1_000 * 2 ** Math.max(0, attempt - 1));
+                  runtime.warn?.(
+                    `mattermost ${info.kind} reply attempt ${attempt} failed: ${String(err)}; ` +
+                      `retrying in ${wait}ms`,
+                  );
+                  await new Promise((resolve) => setTimeout(resolve, wait));
+                }
+              }
             },
             onError: (err, info) => {
-              runtime.error?.(`mattermost ${info.kind} reply failed: ${String(err)}`);
+              // The deliver callback above retries forever, so this
+              // should now only fire for programmer-level errors
+              // (synchronous throws in the dispatcher itself, etc.).
+              // Surface loudly rather than silent logVerbose.
+              runtime.error?.(
+                `mattermost ${info.kind} reply failed (programmer-level): ${String(err)}`,
+              );
             },
           });
 
