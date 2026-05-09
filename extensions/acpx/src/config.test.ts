@@ -15,7 +15,9 @@ describe("embedded acpx plugin config", () => {
     expect(resolved.stateDir).toBe(path.join(workspaceDir, "state"));
     expect(resolved.permissionMode).toBe("approve-reads");
     expect(resolved.nonInteractivePermissions).toBe("fail");
-    expect(resolved.timeoutSeconds).toBe(120);
+    // Default timeout is 0 (disabled) — long agentic turns should not
+    // be cancelled by a built-in cap. See config-schema.ts comment.
+    expect(resolved.timeoutSeconds).toBe(0);
     expect(resolved.agents).toEqual({});
   });
 

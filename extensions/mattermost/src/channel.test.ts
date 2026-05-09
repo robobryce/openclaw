@@ -453,6 +453,25 @@ describe("mattermostPlugin", () => {
       expect(chunker("hello world", 5)).toEqual(["hello", "world"]);
     });
 
+    it("treats live block deliveries as visible (shouldTreatDeliveredTextAsVisible)", () => {
+      // Without this hook, the dispatch-acp-delivery layer never flips
+      // `state.deliveredVisibleText` true after a live chunk lands and
+      // `finalizeAcpTurnOutput` re-emits the same text as a "final"
+      // reply — visible to the user as a duplicate post (gateroom #341).
+      const hook = mattermostPlugin.outbound?.shouldTreatDeliveredTextAsVisible;
+      expect(hook).toBeDefined();
+      // Block deliveries with non-empty text are visible.
+      expect(hook?.({ kind: "block", text: "PONG" })).toBe(true);
+      // Empty / whitespace-only blocks are not visible.
+      expect(hook?.({ kind: "block", text: "" })).toBe(false);
+      expect(hook?.({ kind: "block", text: "   " })).toBe(false);
+      expect(hook?.({ kind: "block", text: undefined })).toBe(false);
+      // "tool" and "final" deliveries are tracked via different state
+      // and intentionally excluded from this hook.
+      expect(hook?.({ kind: "tool", text: "x" })).toBe(false);
+      expect(hook?.({ kind: "final", text: "x" })).toBe(false);
+    });
+
     it("forwards mediaLocalRoots on sendMedia", async () => {
       const sendMedia = requireMattermostSendMedia();
       const cfg = createMattermostTestConfig();

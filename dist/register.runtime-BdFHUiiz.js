@@ -5,7 +5,7 @@ const ACPX_BACKEND_ID = "acpx";
 const ENABLE_STARTUP_PROBE_ENV = "OPENCLAW_ACPX_RUNTIME_STARTUP_PROBE";
 let serviceModulePromise = null;
 function loadServiceModule() {
-	serviceModulePromise ??= import("./service-CwCJdfET.js");
+	serviceModulePromise ??= import("./service-Cw8lvxRE.js");
 	return serviceModulePromise;
 }
 function shouldRunStartupProbe(env = process.env) {

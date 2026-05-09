@@ -297,11 +297,33 @@ function parseMattermostReactActionParams(params: Record<string, unknown>): {
   };
 }
 
+function shouldTreatMattermostDeliveredTextAsVisible(params: {
+  kind: "tool" | "block" | "final";
+  text?: string;
+}): boolean {
+  // Mirrors the Slack/Telegram/Discord adapters: a successful "block"
+  // delivery (a live-streamed assistant chunk) is a visible-to-user
+  // post, so dispatch-acp-delivery's `state.deliveredVisibleText`
+  // becomes true after a live chunk lands. Without this hook,
+  // `finalizeAcpTurnOutput` mistakes the live block for "nothing
+  // visible was delivered" and re-emits the accumulated visible text
+  // as a "final" reply — visible to the user as a duplicate post.
+  // Surfaced live during the gateroom #339 / #341 stress runs on
+  // gr-test-test: short single-block replies (PONG, one-line tool
+  // summaries) double-posted; multi-block replies didn't because the
+  // visible-text fallback's `hasDeliveredVisibleText()` racing window
+  // closed before the fallback fired.
+  return (
+    params.kind === "block" && typeof params.text === "string" && params.text.trim().length > 0
+  );
+}
+
 const mattermostOutbound: ChannelOutboundAdapter = {
   deliveryMode: "direct",
   chunker: chunkTextForOutbound,
   chunkerMode: "markdown",
   textChunkLimit: 4000,
+  shouldTreatDeliveredTextAsVisible: shouldTreatMattermostDeliveredTextAsVisible,
   deliveryCapabilities: {
     durableFinal: {
       text: true,

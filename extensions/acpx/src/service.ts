@@ -82,8 +82,12 @@ function createLazyDefaultRuntime(params: AcpxRuntimeFactoryParams): AcpxRuntime
         mcpServers: toAcpMcpServers(params.pluginConfig.mcpServers),
         permissionMode: params.pluginConfig.permissionMode,
         nonInteractivePermissions: params.pluginConfig.nonInteractivePermissions,
+        // timeoutSeconds === 0 means "no per-turn cap" (the new default —
+        // see config-schema.ts). Translate that to `undefined` so the
+        // acpx runtime doesn't see a 0-ms deadline that would cancel
+        // every turn instantly.
         timeoutMs:
-          params.pluginConfig.timeoutSeconds != null
+          params.pluginConfig.timeoutSeconds != null && params.pluginConfig.timeoutSeconds > 0
             ? params.pluginConfig.timeoutSeconds * 1_000
             : undefined,
       }) as AcpxRuntimeLike;

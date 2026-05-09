@@ -166,7 +166,7 @@ const AcpxPluginConfigSchema = zod_exports.z.strictObject({
 	pluginToolsMcpBridge: zod_exports.z.boolean({ error: "pluginToolsMcpBridge must be a boolean" }).optional(),
 	openClawToolsMcpBridge: zod_exports.z.boolean({ error: "openClawToolsMcpBridge must be a boolean" }).optional(),
 	strictWindowsCmdWrapper: zod_exports.z.boolean({ error: "strictWindowsCmdWrapper must be a boolean" }).optional(),
-	timeoutSeconds: zod_exports.z.number({ error: "timeoutSeconds must be a number >= 0.001" }).min(.001, { error: "timeoutSeconds must be a number >= 0.001" }).default(120),
+	timeoutSeconds: zod_exports.z.number({ error: "timeoutSeconds must be a number >= 0 (0 disables the cap)" }).min(0, { error: "timeoutSeconds must be a number >= 0 (0 disables the cap)" }).default(0),
 	queueOwnerTtlSeconds: zod_exports.z.number({ error: "queueOwnerTtlSeconds must be a number >= 0" }).min(0, { error: "queueOwnerTtlSeconds must be a number >= 0" }).optional(),
 	mcpServers: zod_exports.z.record(zod_exports.z.string(), McpServerConfigSchema).optional(),
 	agents: zod_exports.z.record(zod_exports.z.string(), zod_exports.z.strictObject({ command: nonEmptyTrimmedString("agents.<id>.command must be a non-empty string") })).optional()
@@ -330,7 +330,7 @@ function resolveAcpxPluginConfig(params) {
 		pluginToolsMcpBridge,
 		openClawToolsMcpBridge,
 		strictWindowsCmdWrapper: normalized.strictWindowsCmdWrapper ?? DEFAULT_STRICT_WINDOWS_CMD_WRAPPER,
-		timeoutSeconds: normalized.timeoutSeconds ?? 120,
+		timeoutSeconds: normalized.timeoutSeconds ?? 0,
 		queueOwnerTtlSeconds: normalized.queueOwnerTtlSeconds ?? DEFAULT_QUEUE_OWNER_TTL_SECONDS,
 		legacyCompatibilityConfig: {
 			strictWindowsCmdWrapper: normalized.strictWindowsCmdWrapper,
@@ -734,7 +734,7 @@ function createLazyDefaultRuntime(params) {
 				mcpServers: toAcpMcpServers(params.pluginConfig.mcpServers),
 				permissionMode: params.pluginConfig.permissionMode,
 				nonInteractivePermissions: params.pluginConfig.nonInteractivePermissions,
-				timeoutMs: params.pluginConfig.timeoutSeconds != null ? params.pluginConfig.timeoutSeconds * 1e3 : void 0
+				timeoutMs: params.pluginConfig.timeoutSeconds != null && params.pluginConfig.timeoutSeconds > 0 ? params.pluginConfig.timeoutSeconds * 1e3 : void 0
 			});
 			return runtime;
 		});

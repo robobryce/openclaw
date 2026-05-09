@@ -6,7 +6,16 @@ export type AcpxPermissionMode = (typeof ACPX_PERMISSION_MODES)[number];
 const ACPX_NON_INTERACTIVE_POLICIES = ["deny", "fail"] as const;
 export type AcpxNonInteractivePermissionPolicy = (typeof ACPX_NON_INTERACTIVE_POLICIES)[number];
 
-export const DEFAULT_ACPX_TIMEOUT_SECONDS = 120;
+// 0 disables the per-turn timeout entirely. Long-running agentic
+// turns (essays, multi-step tool sessions, deep research) routinely
+// run past 2 minutes and the prior 120 s default cancelled them
+// mid-flight with `ACP_TURN_FAILED: Timed out after 120000ms`. There
+// is no good "right number" here — anything finite cancels some
+// legitimate turns. The acpx runtime's own per-call abort signal /
+// the gateway's own watchdog handle stuck-process detection; this
+// timeout was redundant safety. Channels that want a cap can opt back
+// in via `plugins.entries.acpx.config.timeoutSeconds`.
+export const DEFAULT_ACPX_TIMEOUT_SECONDS = 0;
 
 export type McpServerConfig = {
   command: string;
@@ -98,8 +107,8 @@ export const AcpxPluginConfigSchema = z.strictObject({
     .boolean({ error: "strictWindowsCmdWrapper must be a boolean" })
     .optional(),
   timeoutSeconds: z
-    .number({ error: "timeoutSeconds must be a number >= 0.001" })
-    .min(0.001, { error: "timeoutSeconds must be a number >= 0.001" })
+    .number({ error: "timeoutSeconds must be a number >= 0 (0 disables the cap)" })
+    .min(0, { error: "timeoutSeconds must be a number >= 0 (0 disables the cap)" })
     .default(DEFAULT_ACPX_TIMEOUT_SECONDS),
   queueOwnerTtlSeconds: z
     .number({ error: "queueOwnerTtlSeconds must be a number >= 0" })

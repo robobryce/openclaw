@@ -713,11 +713,15 @@ function parseMattermostReactActionParams(params) {
 		remove: params.remove === true
 	};
 }
+function shouldTreatMattermostDeliveredTextAsVisible(params) {
+	return params.kind === "block" && typeof params.text === "string" && params.text.trim().length > 0;
+}
 const mattermostOutbound = {
 	deliveryMode: "direct",
 	chunker: chunkTextForOutbound,
 	chunkerMode: "markdown",
 	textChunkLimit: 4e3,
+	shouldTreatDeliveredTextAsVisible: shouldTreatMattermostDeliveredTextAsVisible,
 	deliveryCapabilities: { durableFinal: {
 		text: true,
 		media: true,

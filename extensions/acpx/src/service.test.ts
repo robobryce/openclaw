@@ -374,7 +374,8 @@ describe("createAcpxRuntimeService", () => {
     expect(runtimeFactory).toHaveBeenCalledWith(
       expect.objectContaining({
         pluginConfig: expect.objectContaining({
-          timeoutSeconds: 120,
+          // Default is 0 (= no per-turn cap); see config-schema.ts.
+          timeoutSeconds: 0,
         }),
       }),
     );
