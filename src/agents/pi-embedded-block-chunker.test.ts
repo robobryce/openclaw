@@ -160,4 +160,25 @@ describe("EmbeddedBlockChunker", () => {
       expect(chunk).not.toContain("``\n```");
     }
   });
+
+  it("walks past minChars for whitespace rather than cutting mid-word at maxChars", () => {
+    const chunker = new EmbeddedBlockChunker({
+      minChars: 20,
+      maxChars: 30,
+      breakPreference: "paragraph",
+    });
+
+    // 31 chars: "ab " (whitespace at index 2) + 28 letters with no
+    // whitespace. The [minChars=20, maxChars=30] window contains no
+    // whitespace, so without the prefix-walk fallback the chunker would
+    // cut at index 30 mid-word. With the fallback, it scans [1, 19] and
+    // finds the space at index 2 — producing a short clean chunk
+    // instead of "ab cdefghijklmnopqrstuvwxyzABC" with a mid-word split.
+    chunker.append("ab cdefghijklmnopqrstuvwxyzABCD");
+
+    const chunks = drainChunks(chunker);
+
+    expect(chunks).toEqual(["ab"]);
+    expect(chunker.bufferedText).toBe("cdefghijklmnopqrstuvwxyzABCD");
+  });
 });
