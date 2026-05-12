@@ -367,6 +367,16 @@ export class EmbeddedBlockChunker {
     }
 
     if (buffer.length >= maxChars) {
+      // Before falling back to a mid-word maxChars cut, walk the [1, minChars-1]
+      // prefix for any safe whitespace. A short chunk that ends at a word
+      // boundary is better than a long chunk that ends mid-word — the
+      // alternative produces visibly broken splits like "Committer ident" /
+      // "ity intact" in the Mattermost ACP live-stream path (gateroom #350).
+      for (let i = minChars - 1; i >= 1; i--) {
+        if (/\s/.test(window[i]) && isSafeFenceBreak(fenceSpans, offset + i)) {
+          return { index: i };
+        }
+      }
       if (isSafeFenceBreak(fenceSpans, offset + maxChars)) {
         return { index: maxChars };
       }
