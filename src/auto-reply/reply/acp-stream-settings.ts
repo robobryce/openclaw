@@ -11,17 +11,23 @@ const DEFAULT_ACP_HIDDEN_BOUNDARY_SEPARATOR_LIVE = "space";
 const DEFAULT_ACP_MAX_OUTPUT_CHARS = 24_000;
 const DEFAULT_ACP_MAX_SESSION_UPDATE_CHARS = 320;
 
+// Operator-actionable session-update tags are visible by default so an
+// observer of an MM session channel can see why a turn ended, what the
+// model committed to, and what it was reasoning about. Noisy housekeeping
+// streams (`available_commands_update`, `config_option_update`) stay off
+// — they fire on every slash-command registration / config drift and
+// don't correspond to anything the operator can act on.
 const ACP_TAG_VISIBILITY_DEFAULTS: Record<AcpSessionUpdateTag, boolean> = {
   agent_message_chunk: true,
-  tool_call: false,
-  tool_call_update: false,
-  usage_update: false,
+  tool_call: true,
+  tool_call_update: true,
+  usage_update: true,
   available_commands_update: false,
-  current_mode_update: false,
+  current_mode_update: true,
   config_option_update: false,
-  session_info_update: false,
-  plan: false,
-  agent_thought_chunk: false,
+  session_info_update: true,
+  plan: true,
+  agent_thought_chunk: true,
 };
 
 export type AcpDeliveryMode = "live" | "final_only";
