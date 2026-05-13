@@ -1,4 +1,4 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { n as applyCerebrasConfig, t as CEREBRAS_DEFAULT_MODEL_REF } from "../../onboard-DnpQteUz.js";
 import { t as buildCerebrasProvider } from "../../provider-catalog-CSkWdsD9.js";
 var cerebras_default = defineSingleProviderPluginEntry({

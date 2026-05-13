@@ -1,10 +1,10 @@
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { m as ensureModelAllowlistEntry } from "../../provider-onboard-BPo6fEEZ.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
 import { i as DOUBAO_MODEL_CATALOG, r as DOUBAO_CODING_MODEL_CATALOG } from "../../models-DL4B7vg-.js";
 import { n as buildDoubaoProvider, t as buildDoubaoCodingProvider } from "../../provider-catalog-CPW1--L3.js";
-import { t as buildVolcengineSpeechProvider } from "../../speech-provider-BsgAmy5D.js";
+import { t as buildVolcengineSpeechProvider } from "../../speech-provider-ScwHo-Lr.js";
 //#region extensions/volcengine/index.ts
 const PROVIDER_ID = "volcengine";
 const VOLCENGINE_DEFAULT_MODEL_REF = "volcengine-plan/ark-code-latest";

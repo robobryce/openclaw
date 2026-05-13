@@ -1,8 +1,8 @@
 import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XVt9.js";
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
-import "../../text-runtime-l35dVOXw.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
 import { a as STEPFUN_PLAN_PROVIDER_ID, c as STEPFUN_STANDARD_INTL_BASE_URL, i as STEPFUN_PLAN_INTL_BASE_URL, l as buildStepFunPlanProvider, n as STEPFUN_PLAN_CN_BASE_URL, o as STEPFUN_PROVIDER_ID, r as STEPFUN_PLAN_DEFAULT_MODEL_REF, s as STEPFUN_STANDARD_CN_BASE_URL, t as STEPFUN_DEFAULT_MODEL_REF, u as buildStepFunProvider } from "../../provider-catalog-CrMINCAv.js";
 import { i as applyStepFunStandardConfigCn, n as applyStepFunPlanConfigCn, r as applyStepFunStandardConfig, t as applyStepFunPlanConfig } from "../../onboard-CMh0zhrJ.js";
 //#region extensions/stepfun/index.ts

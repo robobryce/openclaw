@@ -1,2 +1,2 @@
-import { t as createOllamaWebSearchProvider } from "../../web-search-provider-CO-gBbcO.js";
+import { t as createOllamaWebSearchProvider } from "../../web-search-provider-Ce5tHaTQ.js";
 export { createOllamaWebSearchProvider };

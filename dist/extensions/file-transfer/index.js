@@ -1,8 +1,8 @@
-import { i as getRuntimeConfig } from "../../io-qSKtb3D6.js";
-import { n as mutateConfigFile } from "../../mutate-Wp-h-fwz.js";
+import { i as getRuntimeConfig } from "../../io-BvGD_Bil.js";
+import { n as mutateConfigFile } from "../../mutate-xGe9CIw4.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../config-mutation-CaUmumNV.js";
-import "../../runtime-config-snapshot-DKOjE3f-.js";
+import "../../config-mutation-DiaKs5Oq.js";
+import "../../runtime-config-snapshot-VY0CS9sP.js";
 import { a as DIR_LIST_TOOL_DESCRIPTOR, c as FILE_FETCH_TOOL_DESCRIPTOR, d as FILE_WRITE_TOOL_DESCRIPTOR, f as appendFileTransferAudit, r as DIR_FETCH_TOOL_DESCRIPTOR } from "../../descriptors-2InD-5Se.js";
 import path from "node:path";
 import os from "node:os";
@@ -961,19 +961,19 @@ var file_transfer_default = definePluginEntry({
 	register(api) {
 		api.registerNodeInvokePolicy(createFileTransferNodeInvokePolicy());
 		api.registerTool(createLazyTool(FILE_FETCH_TOOL_DESCRIPTOR, async () => {
-			const { createFileFetchTool } = await import("../../file-fetch-tool-iT6PTK4G.js");
+			const { createFileFetchTool } = await import("../../file-fetch-tool-B3vvH_t8.js");
 			return createFileFetchTool();
 		}));
 		api.registerTool(createLazyTool(DIR_LIST_TOOL_DESCRIPTOR, async () => {
-			const { createDirListTool } = await import("../../dir-list-tool-DxxJOFXy.js");
+			const { createDirListTool } = await import("../../dir-list-tool-DmGXNi_J.js");
 			return createDirListTool();
 		}));
 		api.registerTool(createLazyTool(DIR_FETCH_TOOL_DESCRIPTOR, async () => {
-			const { createDirFetchTool } = await import("../../dir-fetch-tool-DVzS0lGm.js");
+			const { createDirFetchTool } = await import("../../dir-fetch-tool-BcVqife9.js");
 			return createDirFetchTool();
 		}));
 		api.registerTool(createLazyTool(FILE_WRITE_TOOL_DESCRIPTOR, async () => {
-			const { createFileWriteTool } = await import("../../file-write-tool-CLrCr-i9.js");
+			const { createFileWriteTool } = await import("../../file-write-tool-DM5uwpJE.js");
 			return createFileWriteTool();
 		}));
 	}

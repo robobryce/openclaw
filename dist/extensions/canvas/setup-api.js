@@ -1,5 +1,5 @@
 import { c as isRecord } from "../../utils-Cs_zUMxj.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 //#region extensions/canvas/src/config-migration.ts
 function readRecord(value) {

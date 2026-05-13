@@ -1,2 +1,2 @@
-import { n as buildCodexProviderCatalog, r as isModernCodexModel, t as buildCodexProvider } from "../../provider-iaqS685z.js";
+import { n as buildCodexProviderCatalog, r as isModernCodexModel, t as buildCodexProvider } from "../../provider-CsMXFopp.js";
 export { buildCodexProvider, buildCodexProviderCatalog, isModernCodexModel };

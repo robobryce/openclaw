@@ -1,18 +1,18 @@
 import "../../defaults-4m7JJmD2.js";
 import { i as PASSTHROUGH_GEMINI_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
-import { l as getOpenRouterModelCapabilities, u as loadOpenRouterModelCapabilities } from "../../provider-stream-Bntg9LOt.js";
-import "../../provider-stream-family-D0TYJpBi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
+import { l as getOpenRouterModelCapabilities, u as loadOpenRouterModelCapabilities } from "../../provider-stream-D6cRcTfA.js";
+import "../../provider-stream-family-BgX7LxE7.js";
 import { i as normalizeOpenRouterBaseUrl, n as buildOpenrouterProvider, r as isOpenRouterProxyReasoningUnsupportedModel, t as OPENROUTER_BASE_URL } from "../../provider-catalog-CDqdKcok.js";
-import { t as buildOpenRouterImageGenerationProvider } from "../../image-generation-provider-CdlPg1_c.js";
-import { t as openrouterMediaUnderstandingProvider } from "../../media-understanding-provider-BaWN__6H.js";
+import { t as buildOpenRouterImageGenerationProvider } from "../../image-generation-provider-CZVswyTp.js";
+import { t as openrouterMediaUnderstandingProvider } from "../../media-understanding-provider-cyY8SIns.js";
 import { n as applyOpenrouterConfig, t as OPENROUTER_DEFAULT_MODEL_REF } from "../../onboard-DtcubKvR.js";
-import { t as buildOpenRouterSpeechProvider } from "../../speech-provider-DjwTXZ5-.js";
-import { t as wrapOpenRouterProviderStream } from "../../stream-DUNxkclh.js";
-import { n as supportsOpenRouterXHighThinking, t as resolveOpenRouterThinkingProfile } from "../../thinking-policy-qBTcJnJR.js";
-import { t as buildOpenRouterVideoGenerationProvider } from "../../video-generation-provider-SaOZorvV.js";
+import { t as buildOpenRouterSpeechProvider } from "../../speech-provider-fF62ruFi.js";
+import { t as wrapOpenRouterProviderStream } from "../../stream-B1KAgFnx.js";
+import { n as supportsOpenRouterXHighThinking, t as resolveOpenRouterThinkingProfile } from "../../thinking-policy-6l3nwkym.js";
+import { t as buildOpenRouterVideoGenerationProvider } from "../../video-generation-provider-p7aUjhAF.js";
 //#region extensions/openrouter/index.ts
 const PROVIDER_ID = "openrouter";
 const OPENROUTER_DEFAULT_MAX_TOKENS = 8192;

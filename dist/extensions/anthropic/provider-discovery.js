@@ -1,4 +1,4 @@
-import { t as readClaudeCliCredentialsForRuntime } from "../../cli-auth-seam-IzKw85mV.js";
+import { t as readClaudeCliCredentialsForRuntime } from "../../cli-auth-seam-zRG1thq6.js";
 //#region extensions/anthropic/provider-discovery.ts
 const CLAUDE_CLI_BACKEND_ID = "claude-cli";
 function resolveClaudeCliSyntheticAuth() {

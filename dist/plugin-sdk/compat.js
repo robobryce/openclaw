@@ -7,7 +7,7 @@ import { a as buildNestedDmConfigSchema, i as buildJsonChannelConfigSchema, n as
 import { n as registerContextEngine } from "../registry-ARur94wS.js";
 import { r as loadBundledPluginPublicSurfaceModuleSync } from "../facade-loader-DbqpecgQ.js";
 import { t as KeyedAsyncQueue } from "../keyed-async-queue-JQbcgZIH.js";
-import { i as writeOAuthCredentials, n as buildApiKeyCredential, r as upsertApiKeyProfile, t as applyAuthProfileConfig } from "../provider-auth-helpers-BBhowtGB.js";
+import { i as writeOAuthCredentials, n as buildApiKeyCredential, r as upsertApiKeyProfile, t as applyAuthProfileConfig } from "../provider-auth-helpers-Ds6sQVQ8.js";
 import "../common-DPSDd5uL.js";
 import { i as stringEnum, r as optionalStringEnum } from "../typebox-CbTbrEDz.js";
 import "../temp-path-DNgkxoq3.js";
@@ -15,8 +15,8 @@ import { i as resolveToolsBySender, n as resolveChannelGroupRequireMention, r as
 import { a as createHybridChannelConfigBase, c as createScopedChannelConfigBase, d as createTopLevelChannelConfigBase, i as createHybridChannelConfigAdapter, l as createScopedDmSecurityResolver, m as mapAllowFromEntries, o as createScopedAccountConfigAccessors, s as createScopedChannelConfigAdapter, u as createTopLevelChannelConfigAdapter } from "../channel-config-helpers-C8BoXENU.js";
 import { t as buildAccountScopedDmSecurityPolicy } from "../helpers-0MvO7C3B.js";
 import "../identity-BJqKZTLs.js";
-import { n as delegateCompactionToRuntime, t as buildMemorySystemPromptAddition } from "../delegate-B0KLEtJv.js";
-import "../text-runtime-l35dVOXw.js";
+import { n as delegateCompactionToRuntime, t as buildMemorySystemPromptAddition } from "../delegate-MGnhqE1U.js";
+import "../text-runtime-BwruZakL.js";
 import { r as emptyPluginConfigSchema } from "../config-schema-D2jcl2zK.js";
 import "../setup-helpers-CLAbCTy7.js";
 import { n as resolveControlCommandGate } from "../command-gating-BM56-zBM.js";
@@ -41,7 +41,7 @@ import "../setup-wizard-helpers-BVwefJul.js";
 import "../channel-targets-DPf9R_J_.js";
 import "../channel-pairing-DSCmqM5V.js";
 import "../status-helpers-Q6qpKJsI.js";
-import "../webhook-ingress-Cxfv2qMo.js";
+import "../webhook-ingress-CRMy2UzE.js";
 //#region src/plugin-sdk/bluebubbles-policy.ts
 function loadFacadeModule() {
 	return loadBundledPluginPublicSurfaceModuleSync({

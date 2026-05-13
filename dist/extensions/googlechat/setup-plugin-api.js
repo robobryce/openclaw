@@ -1,10 +1,10 @@
 import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XVt9.js";
 import { s as createScopedChannelConfigAdapter, t as adaptScopedAccountAccessor } from "../../channel-config-helpers-C8BoXENU.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { n as describeAccountSnapshot } from "../../account-helpers-DNgnV8Mx.js";
 import { n as formatNormalizedAllowFromEntries } from "../../allow-from-DSPsd8yB.js";
-import { a as resolveGoogleChatConfigAccessorAccount, i as resolveGoogleChatAccount, n as listGoogleChatAccountIds, r as resolveDefaultGoogleChatAccountId } from "../../accounts-BkxrFPUg.js";
-import { n as googlechatSetupAdapter, t as googlechatSetupWizard } from "../../setup-surface-CmsnBwOe.js";
+import { a as resolveGoogleChatConfigAccessorAccount, i as resolveGoogleChatAccount, n as listGoogleChatAccountIds, r as resolveDefaultGoogleChatAccountId } from "../../accounts-B8qCdBKH.js";
+import { n as googlechatSetupAdapter, t as googlechatSetupWizard } from "../../setup-surface-C1Zl3ngg.js";
 //#region extensions/googlechat/src/channel.setup.ts
 const formatGoogleChatAllowFromEntry = (entry) => normalizeLowercaseStringOrEmpty(entry.trim().replace(/^(googlechat|google-chat|gchat):/i, "").replace(/^user:/i, "").replace(/^users\//i, ""));
 const googlechatSetupPlugin = {

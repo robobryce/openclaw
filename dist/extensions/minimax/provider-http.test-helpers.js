@@ -1,5 +1,5 @@
 import { n as afterEach } from "../../dist-4RsBJhMS.js";
-import { n as vi } from "../../test.DNmyFkvJ-CvkqywXZ.js";
+import { n as vi } from "../../test.DNmyFkvJ-bfyWEIqf.js";
 //#region extensions/minimax/provider-http.test-helpers.ts
 const minimaxProviderHttpMocks = vi.hoisted(() => ({
 	resolveApiKeyForProviderMock: vi.fn(async () => ({ apiKey: "provider-key" })),

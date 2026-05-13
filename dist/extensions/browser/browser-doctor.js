@@ -1,11 +1,11 @@
 import { c as normalizeOptionalString } from "../../string-coerce-Bje8XVt9.js";
 import { n as asNullableRecord } from "../../record-coerce-CAi9Wuk4.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as note } from "../../note-CGsx0Ar8.js";
-import { n as resolveBrowserConfig } from "../../config-Cdfe7nWZ.js";
-import { i as resolveGoogleChromeExecutableForPlatform, n as readBrowserVersion, r as resolveBrowserExecutableForPlatform, t as parseBrowserMajorVersion } from "../../chrome.executables-7u5qWjbe.js";
-import "../../record-shared-MfKbY7ZU.js";
-import "../../sdk-setup-tools-DML0IuXn.js";
+import { n as resolveBrowserConfig } from "../../config-DjDSMja3.js";
+import { i as resolveGoogleChromeExecutableForPlatform, n as readBrowserVersion, r as resolveBrowserExecutableForPlatform, t as parseBrowserMajorVersion } from "../../chrome.executables-k1VMMZSl.js";
+import "../../record-shared-B_UQwwkG.js";
+import "../../sdk-setup-tools-CcXjmAnE.js";
 //#region extensions/browser/src/doctor-browser.ts
 const CHROME_MCP_MIN_MAJOR = 144;
 const REMOTE_DEBUGGING_PAGES = [

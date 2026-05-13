@@ -1,8 +1,8 @@
 import { n as NATIVE_ANTHROPIC_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { r as readConfiguredProviderCatalogEntries } from "../../provider-catalog-shared-Dh8sLNjN.js";
-import { i as resolveAnthropicVertexConfigApiKey, t as hasAnthropicVertexAvailableAuth } from "../../region-CG6DJxfq.js";
-import { i as resolveImplicitAnthropicVertexProvider, r as mergeImplicitAnthropicVertexProvider } from "../../api-MHtWtoT4.js";
+import { i as resolveAnthropicVertexConfigApiKey, t as hasAnthropicVertexAvailableAuth } from "../../region-UVrmTgNX.js";
+import { i as resolveImplicitAnthropicVertexProvider, r as mergeImplicitAnthropicVertexProvider } from "../../api-BvmRggvP.js";
 //#region extensions/anthropic-vertex/index.ts
 const PROVIDER_ID = "anthropic-vertex";
 const GCP_VERTEX_CREDENTIALS_MARKER = "gcp-vertex-credentials";

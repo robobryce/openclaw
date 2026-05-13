@@ -1,17 +1,17 @@
 import { c as normalizeOptionalString } from "../../string-coerce-Bje8XVt9.js";
-import { n as ensureAuthProfileStore } from "../../store-D-rkbyr1.js";
+import { n as ensureAuthProfileStore } from "../../store-C57uqpQM.js";
 import { t as normalizeOptionalSecretInput } from "../../normalize-secret-input-Bh0uuswB.js";
 import { n as listProfilesForProvider } from "../../profile-list-C3fpPYkZ.js";
-import { a as upsertAuthProfile } from "../../profiles-DkUcgPLq.js";
-import { i as normalizeApiKeyInput, n as ensureApiKeyFromOptionEnvOrPrompt, s as validateApiKeyInput } from "../../provider-auth-input-BH5l-2ch.js";
-import { n as buildApiKeyCredential, t as applyAuthProfileConfig } from "../../provider-auth-helpers-BBhowtGB.js";
-import "../../provider-auth-HUNImjoh.js";
-import "../../text-runtime-l35dVOXw.js";
+import { a as upsertAuthProfile } from "../../profiles-CXZVkqAd.js";
+import { i as normalizeApiKeyInput, n as ensureApiKeyFromOptionEnvOrPrompt, s as validateApiKeyInput } from "../../provider-auth-input-B2ndCDIE.js";
+import { n as buildApiKeyCredential, t as applyAuthProfileConfig } from "../../provider-auth-helpers-Ds6sQVQ8.js";
+import "../../provider-auth-auBtY7jV.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { n as CLOUDFLARE_AI_GATEWAY_DEFAULT_MODEL_REF } from "../../models-CBgidItC.js";
-import { t as buildCloudflareAiGatewayCatalogProvider } from "../../catalog-provider-DkPbJu4I.js";
+import { t as buildCloudflareAiGatewayCatalogProvider } from "../../catalog-provider-Ceqji4uq.js";
 import { r as buildCloudflareAiGatewayConfigPatch, t as applyCloudflareAiGatewayConfig } from "../../onboard-Dd3zZfn0.js";
-import { r as wrapCloudflareAiGatewayProviderStream } from "../../stream-wrappers-Ds3EvPGC.js";
+import { r as wrapCloudflareAiGatewayProviderStream } from "../../stream-wrappers-Dn2nOV0N.js";
 //#region extensions/cloudflare-ai-gateway/index.ts
 const PROVIDER_ID = "cloudflare-ai-gateway";
 const PROVIDER_ENV_VAR = "CLOUDFLARE_AI_GATEWAY_API_KEY";

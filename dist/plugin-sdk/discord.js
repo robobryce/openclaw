@@ -1,5 +1,5 @@
 import { n as normalizeAccountId, t as DEFAULT_ACCOUNT_ID } from "../account-id-BQglYFe1.js";
-import { i as getRuntimeConfig } from "../io-qSKtb3D6.js";
+import { i as getRuntimeConfig } from "../io-BvGD_Bil.js";
 import { i as getRuntimeConfigSnapshot } from "../runtime-snapshot-DCHHcAQJ.js";
 import { n as DiscordConfigSchema } from "../zod-schema.providers-whatsapp-DuTfGWr_.js";
 import { t as getChatChannelMeta } from "../chat-meta-zMbNKjrB.js";
@@ -10,7 +10,7 @@ import { s as migrateBaseNameToDefaultAccount, t as applyAccountNameToChannelSec
 import { t as PAIRING_APPROVED_MESSAGE } from "../pairing-message-MtgX9qjd.js";
 import { o as buildTokenChannelStatusSummary, r as buildComputedAccountStatusSnapshot } from "../status-helpers-Q6qpKJsI.js";
 import { a as resolveConfiguredFromCredentialStatuses, r as projectCredentialSnapshotFields } from "../account-snapshot-fields-3nLuZslq.js";
-import "../runtime-config-snapshot-DKOjE3f-.js";
+import "../runtime-config-snapshot-VY0CS9sP.js";
 import "../channel-plugin-common-DdKX0Zs5.js";
 import "../channel-status-C6g3kAWJ.js";
 import "../bundled-channel-config-schema-B2hKJycg.js";

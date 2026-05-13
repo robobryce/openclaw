@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { i as resolveAnthropicVertexConfigApiKey } from "../../region-CG6DJxfq.js";
+import { i as resolveAnthropicVertexConfigApiKey } from "../../region-UVrmTgNX.js";
 //#region extensions/anthropic-vertex/setup-api.ts
 var setup_api_default = definePluginEntry({
 	id: "anthropic-vertex",

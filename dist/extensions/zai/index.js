@@ -1,20 +1,20 @@
 import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XVt9.js";
 import { t as normalizeOptionalSecretInput } from "../../normalize-secret-input-Bh0uuswB.js";
 import { a as normalizeModelCompat } from "../../provider-model-compat-BMCF93rj.js";
-import { a as upsertAuthProfile } from "../../profiles-DkUcgPLq.js";
+import { a as upsertAuthProfile } from "../../profiles-CXZVkqAd.js";
 import { r as OPENAI_COMPATIBLE_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
-import { i as normalizeApiKeyInput, n as ensureApiKeyFromOptionEnvOrPrompt, s as validateApiKeyInput } from "../../provider-auth-input-BH5l-2ch.js";
-import { n as buildApiKeyCredential, t as applyAuthProfileConfig } from "../../provider-auth-helpers-BBhowtGB.js";
-import { S as createToolStreamWrapper, l as defaultToolStreamExtraParams, s as createPayloadPatchStreamWrapper } from "../../provider-stream-shared-Qbq9m_rT.js";
-import "../../text-runtime-l35dVOXw.js";
+import { i as normalizeApiKeyInput, n as ensureApiKeyFromOptionEnvOrPrompt, s as validateApiKeyInput } from "../../provider-auth-input-B2ndCDIE.js";
+import { n as buildApiKeyCredential, t as applyAuthProfileConfig } from "../../provider-auth-helpers-Ds6sQVQ8.js";
+import { S as createToolStreamWrapper, l as defaultToolStreamExtraParams, s as createPayloadPatchStreamWrapper } from "../../provider-stream-shared-CTsZocMa.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
 import { a as resolveLegacyPiAgentAccessToken } from "../../provider-usage.shared-CordmNM_.js";
 import { t as fetchZaiUsage } from "../../provider-usage-CHq0GPqe.js";
 import { t as detectZaiEndpoint } from "../../detect-QOi2bKFn.js";
-import { t as zaiMediaUnderstandingProvider } from "../../media-understanding-provider-BgEbbFxq.js";
+import { t as zaiMediaUnderstandingProvider } from "../../media-understanding-provider-BjiGP480.js";
 import { l as buildZaiModelDefinition } from "../../model-definitions-53zc8wUB.js";
-import { n as applyZaiConfig, r as applyZaiProviderConfig, t as ZAI_DEFAULT_MODEL_REF } from "../../onboard-B3C5Ejo_.js";
+import { n as applyZaiConfig, r as applyZaiProviderConfig, t as ZAI_DEFAULT_MODEL_REF } from "../../onboard-CC4GOntl.js";
 //#region extensions/zai/index.ts
 const PROVIDER_ID = "zai";
 const GLM5_TEMPLATE_MODEL_ID = "glm-4.7";

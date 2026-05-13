@@ -1,3 +1,3 @@
-import { n as getAcpSessionManager } from "./manager-B-UYD2Vm.js";
-import { a as killSubagentRunAdmin } from "./subagent-control-BKOn7O8w.js";
+import { n as getAcpSessionManager } from "./manager-CmGc3whT.js";
+import { a as killSubagentRunAdmin } from "./subagent-control-DT41qIxI.js";
 export { getAcpSessionManager, killSubagentRunAdmin };

@@ -59,9 +59,17 @@ describe("acp stream settings", () => {
 
   it("uses default tag visibility when no override is provided", () => {
     const settings = resolveAcpProjectionSettings(createAcpTestConfig());
-    expect(isAcpTagVisible(settings, "tool_call")).toBe(false);
-    expect(isAcpTagVisible(settings, "tool_call_update")).toBe(false);
-    expect(isAcpTagVisible(settings, "usage_update")).toBe(false);
+    expect(isAcpTagVisible(settings, "agent_message_chunk")).toBe(true);
+    expect(isAcpTagVisible(settings, "tool_call")).toBe(true);
+    expect(isAcpTagVisible(settings, "tool_call_update")).toBe(true);
+    expect(isAcpTagVisible(settings, "usage_update")).toBe(true);
+    expect(isAcpTagVisible(settings, "current_mode_update")).toBe(true);
+    expect(isAcpTagVisible(settings, "session_info_update")).toBe(true);
+    expect(isAcpTagVisible(settings, "plan")).toBe(true);
+    expect(isAcpTagVisible(settings, "agent_thought_chunk")).toBe(true);
+    // Noisy housekeeping streams stay off by default.
+    expect(isAcpTagVisible(settings, "available_commands_update")).toBe(false);
+    expect(isAcpTagVisible(settings, "config_option_update")).toBe(false);
   });
 
   it("respects tag visibility overrides", () => {

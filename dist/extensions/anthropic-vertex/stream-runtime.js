@@ -1,6 +1,6 @@
 import { n as applyAnthropicPayloadPolicyToParams, r as resolveAnthropicPayloadPolicy } from "../../anthropic-payload-policy-Cgp5kinK.js";
-import "../../provider-stream-shared-Qbq9m_rT.js";
-import { a as resolveAnthropicVertexProjectId, r as resolveAnthropicVertexClientRegion } from "../../region-CG6DJxfq.js";
+import "../../provider-stream-shared-CTsZocMa.js";
+import { a as resolveAnthropicVertexProjectId, r as resolveAnthropicVertexClientRegion } from "../../region-UVrmTgNX.js";
 import { streamAnthropic } from "@mariozechner/pi-ai";
 import { AnthropicVertex } from "@anthropic-ai/vertex-sdk";
 //#region extensions/anthropic-vertex/stream-runtime.ts

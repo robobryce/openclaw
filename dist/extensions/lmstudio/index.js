@@ -1,13 +1,13 @@
 import { t as createSubsystemLogger } from "../../subsystem-4YsHcs_C.js";
 import { t as CUSTOM_LOCAL_AUTH_MARKER } from "../../model-auth-markers-KZum-ADU.js";
 import { n as parseStandalonePlainTextToolCallBlocks } from "../../tool-payload-AR41EGV0.js";
-import "../../provider-auth-HUNImjoh.js";
+import "../../provider-auth-auBtY7jV.js";
 import { _ as ssrfPolicyFromHttpBaseUrlAllowedHostname } from "../../ssrf-C-oxBlw8.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import "../../ssrf-runtime-D54GqMPE.js";
 import "../../logging-core-Cm80AP9o.js";
-import { F as LMSTUDIO_PROVIDER_LABEL, P as LMSTUDIO_PROVIDER_ID, c as resolveLmstudioRuntimeApiKey, f as shouldUseLmstudioSyntheticAuth, g as normalizeLmstudioConfiguredCatalogEntries, n as ensureLmstudioModelLoaded, o as resolveLmstudioProviderHeaders, v as normalizeLmstudioProviderConfig, w as LMSTUDIO_DEFAULT_API_KEY_ENV_VAR, y as resolveLmstudioInferenceBase } from "../../models.fetch-BXGR7wtk.js";
-import { t as lmstudioMemoryEmbeddingProviderAdapter } from "../../memory-embedding-adapter-B99hca5k.js";
+import { F as LMSTUDIO_PROVIDER_LABEL, P as LMSTUDIO_PROVIDER_ID, c as resolveLmstudioRuntimeApiKey, f as shouldUseLmstudioSyntheticAuth, g as normalizeLmstudioConfiguredCatalogEntries, n as ensureLmstudioModelLoaded, o as resolveLmstudioProviderHeaders, v as normalizeLmstudioProviderConfig, w as LMSTUDIO_DEFAULT_API_KEY_ENV_VAR, y as resolveLmstudioInferenceBase } from "../../models.fetch-DN7-BwpI.js";
+import { t as lmstudioMemoryEmbeddingProviderAdapter } from "../../memory-embedding-adapter-Cyu9dWYX.js";
 import { randomUUID } from "node:crypto";
 import { createAssistantMessageEventStream, streamSimple } from "@mariozechner/pi-ai";
 //#region extensions/lmstudio/src/plain-text-tool-calls.ts

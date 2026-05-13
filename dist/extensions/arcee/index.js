@@ -1,7 +1,7 @@
 import { r as OPENAI_COMPATIBLE_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
 import { r as readConfiguredProviderCatalogEntries } from "../../provider-catalog-shared-Dh8sLNjN.js";
 import { a as buildArceeProvider, i as buildArceeOpenRouterProvider, o as normalizeArceeOpenRouterBaseUrl, s as toArceeOpenRouterModelId } from "../../provider-catalog-G_OFg3PF.js";
 import { i as applyArceeOpenRouterConfig, n as ARCEE_OPENROUTER_DEFAULT_MODEL_REF, r as applyArceeConfig, t as ARCEE_DEFAULT_MODEL_REF } from "../../onboard-DP0jGC3M.js";

@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as createBraveWebSearchProvider } from "../../brave-web-search-provider-Bn84MAXi.js";
+import { t as createBraveWebSearchProvider } from "../../brave-web-search-provider-CT8ohfpC.js";
 //#region extensions/brave/index.ts
 var brave_default = definePluginEntry({
 	id: "brave",

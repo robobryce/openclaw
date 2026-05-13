@@ -1,4 +1,4 @@
-import { t as inspectDiscordAccount } from "../../account-inspect-C7_-Sk0V.js";
+import { t as inspectDiscordAccount } from "../../account-inspect-DRTG2r9W.js";
 //#region extensions/discord/account-inspect-api.ts
 function inspectDiscordReadOnlyAccount(cfg, accountId) {
 	return inspectDiscordAccount({

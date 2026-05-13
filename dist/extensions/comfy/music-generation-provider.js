@@ -1,2 +1,2 @@
-import { t as buildComfyMusicGenerationProvider } from "../../music-generation-provider-CAEj3Ce1.js";
+import { t as buildComfyMusicGenerationProvider } from "../../music-generation-provider-BEGwnA1A.js";
 export { buildComfyMusicGenerationProvider };

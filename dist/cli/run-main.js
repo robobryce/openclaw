@@ -155,10 +155,10 @@ async function tryRunGatewayRunFastPath(argv, startupTrace) {
 	if (!isGatewayRunFastPathArgv(argv)) return false;
 	const [{ Command }, { addGatewayRunCommand }, { VERSION }, { emitCliBanner }, { resolveCliStartupPolicy }] = await startupTrace.measure("gateway-run-imports", () => Promise.all([
 		import("commander"),
-		import("../run-BuGj1U9q.js"),
+		import("../run-BLpYG6eo.js"),
 		import("../version-DwPOTu01.js"),
-		import("../banner-CQEF37ya.js"),
-		import("../command-startup-policy-Cm9rDHQE.js")
+		import("../banner-CWr1vhZr.js"),
+		import("../command-startup-policy-Pax4uV46.js")
 	]));
 	if (!resolveCliStartupPolicy({
 		commandPath: resolveCliArgvInvocation(argv).commandPath,
@@ -186,7 +186,7 @@ async function closeCliMemoryManagers() {
 	try {
 		const { hasMemoryRuntime } = await import("../plugins/memory-state.js");
 		if (!hasMemoryRuntime()) return;
-		const { closeActiveMemorySearchManagers } = await import("../memory-runtime-BKlvs7tz.js");
+		const { closeActiveMemorySearchManagers } = await import("../memory-runtime-CTMYbxeJ.js");
 		await closeActiveMemorySearchManagers();
 	} catch {}
 }
@@ -229,7 +229,7 @@ function isKnownBuiltInCommandRoot(primary) {
 }
 async function isPluginCliRoot(params) {
 	try {
-		const { resolvePluginCliRootOwnerIds } = await import("../cli-registry-loader-CP74GbBj.js");
+		const { resolvePluginCliRootOwnerIds } = await import("../cli-registry-loader-DWkbqGyP.js");
 		const ownerIds = await resolvePluginCliRootOwnerIds({
 			cfg: params.config,
 			env: process$1.env,
@@ -251,7 +251,7 @@ async function resolveUnownedCliPrimary(params) {
 	return primary;
 }
 async function bootstrapCliProxyCaptureAndDispatcher(startupTrace, options = {}) {
-	const [{ initializeDebugProxyCapture, finalizeDebugProxyCapture }, { maybeWarnAboutDebugProxyCoverage }] = await startupTrace.measure("proxy-imports", () => Promise.all([import("../runtime-DE5Mlh9p.js"), import("../coverage-CXxMMHSz.js")]));
+	const [{ initializeDebugProxyCapture, finalizeDebugProxyCapture }, { maybeWarnAboutDebugProxyCoverage }] = await startupTrace.measure("proxy-imports", () => Promise.all([import("../runtime-DE5Mlh9p.js"), import("../coverage-Dh9mR-47.js")]));
 	initializeDebugProxyCapture("cli");
 	process$1.once("exit", () => {
 		finalizeDebugProxyCapture();
@@ -276,7 +276,7 @@ async function runCli(argv = process$1.argv) {
 	let normalizedArgv = parsedProfile.argv;
 	startupTrace.mark("argv");
 	if (shouldLoadCliDotEnv()) await startupTrace.measure("dotenv", async () => {
-		const { loadCliDotEnv } = await import("../dotenv-2ymEj3D7.js");
+		const { loadCliDotEnv } = await import("../dotenv-plZNFqtz.js");
 		loadCliDotEnv({ quiet: true });
 	});
 	normalizeEnv();
@@ -285,7 +285,7 @@ async function runCli(argv = process$1.argv) {
 	let proxyHandle = null;
 	let bestEffortConfigPromise = null;
 	const readBestEffortCliConfig = async () => {
-		if (!bestEffortConfigPromise) bestEffortConfigPromise = import("../io-CuU4z2Z7.js").then(({ readBestEffortConfig }) => readBestEffortConfig());
+		if (!bestEffortConfigPromise) bestEffortConfigPromise = import("../io-5eYLy3EN.js").then(({ readBestEffortConfig }) => readBestEffortConfig());
 		return await bestEffortConfigPromise;
 	};
 	const stopStartedProxy = async () => {
@@ -331,15 +331,15 @@ async function runCli(argv = process$1.argv) {
 	}
 	try {
 		if (shouldUseRootHelpFastPath(normalizedArgv)) {
-			const { outputPrecomputedRootHelpText } = await import("../root-help-metadata-B7VKrHdC.js");
+			const { outputPrecomputedRootHelpText } = await import("../root-help-metadata-BXYojLpi.js");
 			if (!outputPrecomputedRootHelpText()) {
-				const { outputRootHelp } = await import("../root-help-DhEX9plG.js");
+				const { outputRootHelp } = await import("../root-help-CA-_MkNP.js");
 				await outputRootHelp();
 			}
 			return;
 		}
 		if (shouldUseBrowserHelpFastPath(normalizedArgv)) {
-			const { outputPrecomputedBrowserHelpText } = await import("../root-help-metadata-B7VKrHdC.js");
+			const { outputPrecomputedBrowserHelpText } = await import("../root-help-metadata-BXYojLpi.js");
 			if (outputPrecomputedBrowserHelpText()) return;
 		}
 		const shouldRunBareRootCrestodian = shouldStartCrestodianForBareRoot(normalizedArgv);
@@ -388,7 +388,7 @@ async function runCli(argv = process$1.argv) {
 		if (!bootstrapProxyBeforeFastPath && await tryRunGatewayRunFastPath(normalizedArgv, startupTrace)) return;
 		await bootstrapCliProxyCaptureAndDispatcher(startupTrace, { ensureDispatcher: shouldUseCliEnvProxy });
 		if (bootstrapProxyBeforeFastPath && await tryRunGatewayRunFastPath(normalizedArgv, startupTrace)) return;
-		const { tryRouteCli } = await startupTrace.measure("route-import", () => import("../route-dKogSb1i.js"));
+		const { tryRouteCli } = await startupTrace.measure("route-import", () => import("../route-B2LnufbJ.js"));
 		if (await startupTrace.measure("route", () => tryRouteCli(normalizedArgv))) return;
 		const { createCliProgress } = await import("../progress-BRgDwAI1.js");
 		const startupProgress = createCliProgress({
@@ -407,7 +407,7 @@ async function runCli(argv = process$1.argv) {
 			const { enableConsoleCapture } = await import("../logging-BhNP7mjI.js");
 			enableConsoleCapture();
 			const [{ buildProgram }, { formatUncaughtError }, { runFatalErrorHooks }, { installUnhandledRejectionHandler, isBenignUncaughtExceptionError, isUncaughtExceptionHandled }, { restoreTerminalState }] = await startupTrace.measure("core-imports", () => Promise.all([
-				import("../program-Bjag8OKe.js"),
+				import("../program-DTXY9w5N.js"),
 				import("../infra/errors.js"),
 				import("../fatal-error-hooks-DxqbkWSf.js"),
 				import("../unhandled-rejections-C8TsB4mS.js"),
@@ -432,13 +432,13 @@ async function runCli(argv = process$1.argv) {
 			const parseArgv = rewriteUpdateFlagArgv(normalizedArgv);
 			const { primary } = resolveCliArgvInvocation(parseArgv);
 			if (primary && shouldRegisterPrimaryCommandOnly(parseArgv)) await startupTrace.measure("register-primary", async () => {
-				const { getProgramContext } = await import("../program-context-BdQlmXD0.js");
+				const { getProgramContext } = await import("../program-context-Cb8v6MAv.js");
 				const ctx = getProgramContext(program);
 				if (ctx) {
-					const { registerCoreCliByName } = await import("../command-registry-DCAZgHGF.js");
+					const { registerCoreCliByName } = await import("../command-registry-D_4ivwLt.js");
 					await registerCoreCliByName(program, ctx, primary, parseArgv);
 				}
-				const { registerSubCliByName } = await import("../register.subclis-2FgyUrdY.js");
+				const { registerSubCliByName } = await import("../register.subclis-BSki5Lm5.js");
 				await registerSubCliByName(program, primary, parseArgv);
 			});
 			if (!shouldSkipPluginCommandRegistration({
@@ -447,7 +447,7 @@ async function runCli(argv = process$1.argv) {
 				hasBuiltinPrimary: primary !== null && program.commands.some((command) => command.name() === primary || command.aliases().includes(primary))
 			})) {
 				const config = await startupTrace.measure("register-plugin-commands", async () => {
-					const { registerPluginCliCommandsFromValidatedConfig } = await import("../cli-gOaItiUi.js");
+					const { registerPluginCliCommandsFromValidatedConfig } = await import("../cli-BE19E9qx.js");
 					return await registerPluginCliCommandsFromValidatedConfig(program, void 0, void 0, {
 						mode: "lazy",
 						primary
@@ -455,7 +455,7 @@ async function runCli(argv = process$1.argv) {
 				});
 				if (config) {
 					if (primary && !program.commands.some((command) => command.name() === primary || command.aliases().includes(primary))) {
-						const { resolveManifestCommandAliasOwner } = await import("../manifest-command-aliases.runtime-DtJ21VAy.js");
+						const { resolveManifestCommandAliasOwner } = await import("../manifest-command-aliases.runtime-Bfg002AB.js");
 						const missingPluginCommandMessage = resolveMissingPluginCommandMessage$1(primary, config, { resolveCommandAliasOwner: resolveManifestCommandAliasOwner });
 						if (missingPluginCommandMessage) throw new Error(missingPluginCommandMessage);
 					}

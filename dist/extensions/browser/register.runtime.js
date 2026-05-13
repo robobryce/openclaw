@@ -2,16 +2,16 @@ import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XV
 import { t as formatCliCommand } from "../../command-format-ut6bcRZg.js";
 import { s as hasConfiguredSecretInput } from "../../types.secrets-BgzzIHyp.js";
 import { u as isPrivateIpAddress } from "../../ssrf-C-oxBlw8.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import "../../secret-input-CkHWmqIu.js";
 import "../../setup-tools-DBqtm4nF.js";
 import { o as isPrivateNetworkOptInEnabled } from "../../ssrf-policy-BOQQhVEM.js";
-import { f as redactCdpUrl } from "../../cdp.helpers-D7WFUjsV.js";
-import { i as resolveProfile, n as resolveBrowserConfig } from "../../config-Cdfe7nWZ.js";
-import { n as resolveBrowserControlAuth } from "../../control-auth-C6L-eDTk.js";
-import { t as hasNonEmptyString } from "../../record-shared-MfKbY7ZU.js";
-import { r as runBrowserProxyCommand } from "../../browser-runtime-DVplzyeB.js";
-import { i as createBrowserTool, r as handleBrowserGatewayRequest, t as createBrowserPluginService } from "../../plugin-service-BtCrdFbl.js";
+import { f as redactCdpUrl } from "../../cdp.helpers-CveT61pB.js";
+import { i as resolveProfile, n as resolveBrowserConfig } from "../../config-DjDSMja3.js";
+import { n as resolveBrowserControlAuth } from "../../control-auth-C0Fp59Zk.js";
+import { t as hasNonEmptyString } from "../../record-shared-B_UQwwkG.js";
+import { r as runBrowserProxyCommand } from "../../browser-runtime-CWGnxQ9J.js";
+import { i as createBrowserTool, r as handleBrowserGatewayRequest, t as createBrowserPluginService } from "../../plugin-service-D_15KySX.js";
 //#region extensions/browser/src/security-audit.ts
 const BLOCKED_HOSTNAMES = new Set([
 	"localhost",

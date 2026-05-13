@@ -1,6 +1,6 @@
 import { p as readProviderEnvValue } from "../../web-search-provider-common-B3nliRhV.js";
 import "../../provider-web-search-D22jik6t.js";
-import { n as resolveFallbackXaiAuth } from "../../tool-auth-shared-Bc9NHZ73.js";
+import { n as resolveFallbackXaiAuth } from "../../tool-auth-shared-DWwvrQeH.js";
 //#region extensions/xai/provider-discovery.ts
 const PROVIDER_ID = "xai";
 function resolveXaiSyntheticAuth(config) {

@@ -1,10 +1,10 @@
 import { i as getRuntimeConfigSnapshot } from "../../runtime-snapshot-DCHHcAQJ.js";
 import { g as readStringParam, l as jsonResult } from "../../common-DPSDd5uL.js";
 import { u as postTrustedWebToolsJson } from "../../web-search-provider-common-B3nliRhV.js";
-import "../../runtime-config-snapshot-DKOjE3f-.js";
+import "../../runtime-config-snapshot-VY0CS9sP.js";
 import "../../provider-web-search-D22jik6t.js";
-import { r as resolveXaiToolApiKey, t as isXaiToolEnabled } from "../../tool-auth-shared-Bc9NHZ73.js";
-import { n as resolveNormalizedXaiToolModel, r as resolvePositiveIntegerToolConfig } from "../../tool-config-shared-LlB496Vk.js";
+import { r as resolveXaiToolApiKey, t as isXaiToolEnabled } from "../../tool-auth-shared-DWwvrQeH.js";
+import { n as resolveNormalizedXaiToolModel, r as resolvePositiveIntegerToolConfig } from "../../tool-config-shared-CIDHUaZj.js";
 import { i as resolveXaiResponseTextAndCitations, n as buildXaiResponsesToolBody, t as XAI_RESPONSES_ENDPOINT } from "../../responses-tool-shared-DVINy0wr.js";
 import { Type } from "typebox";
 //#region extensions/xai/src/code-execution-shared.ts

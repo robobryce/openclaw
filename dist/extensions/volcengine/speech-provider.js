@@ -1,2 +1,2 @@
-import { t as buildVolcengineSpeechProvider } from "../../speech-provider-BsgAmy5D.js";
+import { t as buildVolcengineSpeechProvider } from "../../speech-provider-ScwHo-Lr.js";
 export { buildVolcengineSpeechProvider };

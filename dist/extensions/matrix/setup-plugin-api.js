@@ -1,7 +1,7 @@
 import { n as describeAccountSnapshot } from "../../account-helpers-DNgnV8Mx.js";
 import { i as resolveMatrixAccount } from "../../accounts-DdLNP7Ks.js";
 import { n as matrixConfigAdapter, t as MatrixChannelConfigSchema } from "../../config-schema-nf6PESdI.js";
-import { n as matrixSetupAdapter, t as createMatrixSetupWizardProxy } from "../../setup-core-DcKSjaMc.js";
+import { n as matrixSetupAdapter, t as createMatrixSetupWizardProxy } from "../../setup-core-DxvhDkDc.js";
 const matrixSetupPlugin = {
 	id: "matrix",
 	meta: {
@@ -14,7 +14,7 @@ const matrixSetupPlugin = {
 		order: 70,
 		quickstartAllowFrom: true
 	},
-	setupWizard: createMatrixSetupWizardProxy(async () => ({ matrixSetupWizard: (await import("../../setup-surface-B418U1oY.js")).matrixSetupWizard })),
+	setupWizard: createMatrixSetupWizardProxy(async () => ({ matrixSetupWizard: (await import("../../setup-surface-BYMKG8vp.js")).matrixSetupWizard })),
 	setup: matrixSetupAdapter,
 	capabilities: {
 		chatTypes: [

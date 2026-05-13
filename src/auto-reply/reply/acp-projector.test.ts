@@ -393,24 +393,11 @@ describe("createAcpReplyProjector", () => {
     expectToolCallSummary(deliveries[1]);
   });
 
-  it("suppresses usage_update by default and allows deduped usage when tag-visible", async () => {
-    const { deliveries: hidden, projector: hiddenProjector } = createProjectorHarness();
-    await hiddenProjector.onEvent({
-      type: "status",
-      text: "usage updated: 10/100",
-      tag: "usage_update",
-      used: 10,
-      size: 100,
-    });
-    expect(hidden).toEqual([]);
-
+  it("shows usage_update by default, deduped on identical tuples, and honors explicit suppression", async () => {
     const { deliveries: shown, projector: shownProjector } = createProjectorHarness(
       createLiveCfgOverrides({
         coalesceIdleMs: 0,
         maxChunkChars: 64,
-        tagVisibility: {
-          usage_update: true,
-        },
       }),
     );
 
@@ -440,6 +427,24 @@ describe("createAcpReplyProjector", () => {
       { kind: "tool", text: prefixSystemMessage("usage updated: 10/100") },
       { kind: "tool", text: prefixSystemMessage("usage updated: 11/100") },
     ]);
+
+    const { deliveries: hidden, projector: hiddenProjector } = createProjectorHarness(
+      createLiveCfgOverrides({
+        coalesceIdleMs: 0,
+        maxChunkChars: 64,
+        tagVisibility: {
+          usage_update: false,
+        },
+      }),
+    );
+    await hiddenProjector.onEvent({
+      type: "status",
+      text: "usage updated: 10/100",
+      tag: "usage_update",
+      used: 10,
+      size: 100,
+    });
+    expect(hidden).toEqual([]);
   });
 
   it("hides available_commands_update by default", async () => {
@@ -689,7 +694,12 @@ describe("createAcpReplyProjector", () => {
 
   it("inserts a space boundary before visible text after hidden tool updates by default", async () => {
     await runHiddenBoundaryCase({
-      cfgOverrides: createHiddenBoundaryCfg(),
+      cfgOverrides: createHiddenBoundaryCfg({
+        tagVisibility: {
+          tool_call: false,
+          tool_call_update: false,
+        },
+      }),
       toolCallId: "call_hidden_1",
       expectedText: "fallback. I don't",
     });
@@ -713,6 +723,10 @@ describe("createAcpReplyProjector", () => {
     await runHiddenBoundaryCase({
       cfgOverrides: createHiddenBoundaryCfg({
         hiddenBoundarySeparator: "space",
+        tagVisibility: {
+          tool_call: false,
+          tool_call_update: false,
+        },
       }),
       toolCallId: "call_hidden_2",
       expectedText: "fallback. I don't",
@@ -723,6 +737,10 @@ describe("createAcpReplyProjector", () => {
     await runHiddenBoundaryCase({
       cfgOverrides: createHiddenBoundaryCfg({
         hiddenBoundarySeparator: "none",
+        tagVisibility: {
+          tool_call: false,
+          tool_call_update: false,
+        },
       }),
       toolCallId: "call_hidden_3",
       expectedText: "fallback.I don't",
@@ -731,7 +749,12 @@ describe("createAcpReplyProjector", () => {
 
   it("does not duplicate newlines when previous visible text already ends with newline", async () => {
     await runHiddenBoundaryCase({
-      cfgOverrides: createHiddenBoundaryCfg(),
+      cfgOverrides: createHiddenBoundaryCfg({
+        tagVisibility: {
+          tool_call: false,
+          tool_call_update: false,
+        },
+      }),
       toolCallId: "call_hidden_4",
       firstText: "fallback.\n",
       expectedText: "fallback.\nI don't",

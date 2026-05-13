@@ -1,11 +1,11 @@
 import "../../defaults-4m7JJmD2.js";
 import { a as normalizeModelCompat } from "../../provider-model-compat-BMCF93rj.js";
 import { d as cloneFirstTemplateModel, r as OPENAI_COMPATIBLE_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { t as isFireworksKimiModelId } from "../../model-id-BvGOgmfJ.js";
 import { l as buildFireworksProvider, n as FIREWORKS_DEFAULT_CONTEXT_WINDOW, r as FIREWORKS_DEFAULT_MAX_TOKENS, t as FIREWORKS_BASE_URL } from "../../provider-catalog-Liu0mOdc.js";
 import { n as applyFireworksConfig, t as FIREWORKS_DEFAULT_MODEL_REF } from "../../onboard-DLDcEDQc.js";
-import { n as wrapFireworksProviderStream } from "../../stream-CfO8KKNE.js";
+import { n as wrapFireworksProviderStream } from "../../stream-HZhXqDUw.js";
 import { t as resolveFireworksThinkingProfile } from "../../thinking-policy-Bjevk47N.js";
 //#region extensions/fireworks/index.ts
 const PROVIDER_ID = "fireworks";

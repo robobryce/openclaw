@@ -5,17 +5,17 @@ import { t as startGatewayClientWhenEventLoopReady } from "../../client-start-re
 import { n as GatewayClient } from "../../client-CO0vIOsX.js";
 import { gi as errorShape, hi as ErrorCodes } from "../../protocol-0JcDkELB.js";
 import { c as isBlockedHostnameOrIp } from "../../ssrf-C-oxBlw8.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import "../../routing-D3J5VUni.js";
 import "../../error-runtime-CLFIkpmb.js";
 import "../../ssrf-runtime-D54GqMPE.js";
-import "../../gateway-runtime-A-900Gqw.js";
-import { n as callGatewayFromCli } from "../../gateway-rpc-u4NQxCvO.js";
-import { n as getRealtimeTranscriptionProvider, r as listRealtimeTranscriptionProviders } from "../../provider-registry-yoCm0PYx.js";
-import "../../realtime-transcription-CKOKqyt6.js";
-import { O as REALTIME_VOICE_AUDIO_FORMAT_G711_ULAW_8KHZ, _ as resolveRealtimeVoiceAgentConsultTools, c as REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME, f as buildRealtimeVoiceAgentConsultWorkingResponse, g as resolveRealtimeVoiceAgentConsultToolPolicy, k as REALTIME_VOICE_AUDIO_FORMAT_PCM16_24KHZ, n as resolveConfiguredRealtimeVoiceProvider, t as createRealtimeVoiceBridgeSession, v as resolveRealtimeVoiceAgentConsultToolsAllow, x as recordTalkObservabilityEvent, y as createTalkSessionController } from "../../session-runtime-TUPp0d49.js";
-import { c as getRealtimeVoiceTranscriptHealth, d as recordRealtimeVoiceTranscript, i as resamplePcm, l as isLikelyRealtimeVoiceAssistantEchoTranscript, m as consultRealtimeVoiceAgent, n as mulawToPcm, o as extendRealtimeVoiceOutputEchoSuppression, p as createRealtimeVoiceAgentTalkbackQueue, s as getRealtimeVoiceBridgeEventHealth, t as convertPcmToMulaw8k, u as recordRealtimeVoiceBridgeEvent } from "../../realtime-voice-DHQurcps.js";
+import "../../gateway-runtime-DHNUkD5H.js";
+import { n as callGatewayFromCli } from "../../gateway-rpc-Bxl2w4YS.js";
+import { n as getRealtimeTranscriptionProvider, r as listRealtimeTranscriptionProviders } from "../../provider-registry-D_cqsdlR.js";
+import "../../realtime-transcription-CH4xOIcE.js";
+import { O as REALTIME_VOICE_AUDIO_FORMAT_G711_ULAW_8KHZ, _ as resolveRealtimeVoiceAgentConsultTools, c as REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME, f as buildRealtimeVoiceAgentConsultWorkingResponse, g as resolveRealtimeVoiceAgentConsultToolPolicy, k as REALTIME_VOICE_AUDIO_FORMAT_PCM16_24KHZ, n as resolveConfiguredRealtimeVoiceProvider, t as createRealtimeVoiceBridgeSession, v as resolveRealtimeVoiceAgentConsultToolsAllow, x as recordTalkObservabilityEvent, y as createTalkSessionController } from "../../session-runtime-5e0Akz11.js";
+import { c as getRealtimeVoiceTranscriptHealth, d as recordRealtimeVoiceTranscript, i as resamplePcm, l as isLikelyRealtimeVoiceAssistantEchoTranscript, m as consultRealtimeVoiceAgent, n as mulawToPcm, o as extendRealtimeVoiceOutputEchoSuppression, p as createRealtimeVoiceAgentTalkbackQueue, s as getRealtimeVoiceBridgeEventHealth, t as convertPcmToMulaw8k, u as recordRealtimeVoiceBridgeEvent } from "../../realtime-voice-Bt7mPoc5.js";
 import { a as isSameMeetUrlForReuse, c as resolveChromeNode, f as endGoogleMeetActiveConference, g as fetchLatestGoogleMeetConferenceRecord, h as fetchGoogleMeetSpace, i as callBrowserProxyOnNode, l as resolveChromeNodeInfo, m as fetchGoogleMeetAttendance, n as isGoogleMeetBrowserManualActionError, o as normalizeMeetUrlForReuse, p as fetchGoogleMeetArtifacts, r as asBrowserTabs, s as readBrowserTab, t as createMeetWithBrowserProxyOnNode, u as buildGoogleMeetPreflightReport } from "../../chrome-create-BZdh9svm.js";
 import { n as findGoogleMeetCalendarEvent, r as listGoogleMeetCalendarEvents, t as buildGoogleMeetCalendarDayWindow } from "../../calendar-B_zmDusa.js";
 import fs from "node:fs";
@@ -4451,13 +4451,13 @@ async function callGoogleMeetGatewayFromTool(params) {
 	}
 }
 async function createMeetFromParams(params) {
-	return (await import("../../create-CDc4UV7p.js")).createMeetFromParams(params);
+	return (await import("../../create-BX21T-ag.js")).createMeetFromParams(params);
 }
 async function createAndJoinMeetFromParams(params) {
-	return (await import("../../create-CDc4UV7p.js")).createAndJoinMeetFromParams(params);
+	return (await import("../../create-BX21T-ag.js")).createAndJoinMeetFromParams(params);
 }
 async function resolveGoogleMeetTokenFromParams(config, raw) {
-	const { resolveGoogleMeetAccessToken } = await import("../../oauth-Dw2KczOa.js");
+	const { resolveGoogleMeetAccessToken } = await import("../../oauth-CGvM8ZCR.js");
 	return resolveGoogleMeetAccessToken({
 		clientId: normalizeOptionalString$1(raw.clientId) ?? config.oauth.clientId,
 		clientSecret: normalizeOptionalString$1(raw.clientSecret) ?? config.oauth.clientSecret,
@@ -4546,7 +4546,7 @@ async function exportGoogleMeetBundleFromParams(config, raw) {
 		lateAfterMinutes: resolved.lateAfterMinutes,
 		earlyBeforeMinutes: resolved.earlyBeforeMinutes
 	})]);
-	const { buildGoogleMeetExportManifest, googleMeetExportFileNames, writeMeetExportBundle } = await import("../../cli-DnjSbl46.js");
+	const { buildGoogleMeetExportManifest, googleMeetExportFileNames, writeMeetExportBundle } = await import("../../cli-Bo0pHhpV.js");
 	const calendarId = normalizeOptionalString$1(raw.calendarId);
 	const request = {
 		...resolved.meeting ? { meeting: resolved.meeting } : {},
@@ -4962,7 +4962,7 @@ var google_meet_default = definePluginEntry({
 			handle: handleGoogleMeetNodeHostCommand
 		});
 		api.registerCli(async ({ program }) => {
-			const { registerGoogleMeetCli } = await import("../../cli-DnjSbl46.js");
+			const { registerGoogleMeetCli } = await import("../../cli-Bo0pHhpV.js");
 			registerGoogleMeetCli({
 				program,
 				config,

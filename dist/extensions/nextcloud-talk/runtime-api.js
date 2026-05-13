@@ -4,6 +4,6 @@ import { a as warnMissingProviderGroupPolicyFallbackOnce, n as resolveAllowlistP
 import { a as resolveDmGroupAccessWithCommandGate, n as readStoreAllowFromForDmPolicy } from "../../dm-policy-shared-B4V1HH_w.js";
 import { n as logInboundDrop } from "../../logging-Db0TgtK-.js";
 import { n as createChannelPairingController } from "../../channel-pairing-DSCmqM5V.js";
-import { o as dispatchChannelMessageReplyWithBase } from "../../channel-message-DUdqhpNg.js";
-import { n as setNextcloudTalkRuntime } from "../../runtime-api-Dz0D3iFw.js";
+import { o as dispatchChannelMessageReplyWithBase } from "../../channel-message-ibxoZVQ3.js";
+import { n as setNextcloudTalkRuntime } from "../../runtime-api-CrBk4_dk.js";
 export { GROUP_POLICY_BLOCKED_LABEL, createChannelPairingController, deliverFormattedTextWithAttachments, dispatchChannelMessageReplyWithBase, fetchWithSsrFGuard, logInboundDrop, readStoreAllowFromForDmPolicy, resolveAllowlistProviderRuntimeGroupPolicy, resolveDefaultGroupPolicy, resolveDmGroupAccessWithCommandGate, setNextcloudTalkRuntime, warnMissingProviderGroupPolicyFallbackOnce };

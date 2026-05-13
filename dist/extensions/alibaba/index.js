@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as buildAlibabaVideoGenerationProvider } from "../../video-generation-provider-Bi3vaHWU.js";
+import { t as buildAlibabaVideoGenerationProvider } from "../../video-generation-provider-BUYXe3sW.js";
 //#region extensions/alibaba/index.ts
 var alibaba_default = definePluginEntry({
 	id: "alibaba",

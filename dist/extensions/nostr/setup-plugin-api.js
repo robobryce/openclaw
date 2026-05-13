@@ -109,7 +109,7 @@ const nostrSetupAdapter = {
 };
 const nostrSetupWizard = createDelegatedSetupWizardProxy({
 	channel,
-	loadWizard: async () => (await import("../../setup-surface-Ctu7o-ut.js")).nostrSetupWizard,
+	loadWizard: async () => (await import("../../setup-surface-B9qUu_N9.js")).nostrSetupWizard,
 	status: { ...createStandardChannelSetupStatus({
 		channelLabel: "Nostr",
 		configuredLabel: "configured",

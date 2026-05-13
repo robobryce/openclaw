@@ -1,5 +1,5 @@
 import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XVt9.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 //#region extensions/acpx/setup-api.ts
 var setup_api_default = definePluginEntry({

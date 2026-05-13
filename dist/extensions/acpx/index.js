@@ -1,5 +1,5 @@
-import { t as tryDispatchAcpReplyHook } from "../../acp-runtime-backend-DT8U-frD.js";
-import { t as createAcpxRuntimeService } from "../../register.runtime-BdFHUiiz.js";
+import { t as tryDispatchAcpReplyHook } from "../../acp-runtime-backend-BkD3fbKR.js";
+import { t as createAcpxRuntimeService } from "../../register.runtime-DM-mH108.js";
 //#region extensions/acpx/index.ts
 const plugin = {
 	id: "acpx",

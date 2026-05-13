@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as buildAnthropicCliBackend } from "../../cli-backend-DeNDuARO.js";
+import { t as buildAnthropicCliBackend } from "../../cli-backend-B-simDFs.js";
 //#region extensions/anthropic/setup-api.ts
 var setup_api_default = definePluginEntry({
 	id: "anthropic",

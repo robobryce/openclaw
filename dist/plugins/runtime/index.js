@@ -6,43 +6,43 @@ import { i as getChildLogger, y as normalizeLogLevel } from "../../logger-DtcQ69
 import { a as shouldLogVerbose } from "../../globals-BkYSZEKh.js";
 import { a as logWarn } from "../../logger-C190dODJ.js";
 import { r as runCommandWithTimeout } from "../../exec-DFvEeXHh.js";
-import { i as getRuntimeConfig } from "../../io-qSKtb3D6.js";
+import { i as getRuntimeConfig } from "../../io-BvGD_Bil.js";
 import { n as DEFAULT_MODEL, r as DEFAULT_PROVIDER } from "../../defaults-4m7JJmD2.js";
-import { n as mutateConfigFile, r as replaceConfigFile } from "../../mutate-Wp-h-fwz.js";
-import "../../config-DgbftrzN.js";
+import { n as mutateConfigFile, r as replaceConfigFile } from "../../mutate-xGe9CIw4.js";
+import "../../config-_rpt9b2u.js";
 import { l as onAgentEvent } from "../../agent-events-eSSyIqIm.js";
 import { i as resolveSessionFilePath, u as resolveStorePath } from "../../paths-BmdY-Qui.js";
 import { i as normalizeDeliveryContext } from "../../delivery-context.shared-DrpHDBSq.js";
-import { t as loadSessionStore } from "../../store-load-CZSUCJqj.js";
-import { i as saveSessionStore, o as updateSessionStore, s as updateSessionStoreEntry } from "../../store-DPr34eb5.js";
+import { t as loadSessionStore } from "../../store-load-D1NDZfCL.js";
+import { i as saveSessionStore, o as updateSessionStore, s as updateSessionStoreEntry } from "../../store-ykbL7YTc.js";
 import { n as onSessionTranscriptUpdate } from "../../transcript-events-C6wJ4wp2.js";
 import "../../logging-CBzL0sMb.js";
 import { r as buildConfiguredModelCatalog } from "../../model-selection-shared-BL9Kfr1K.js";
 import { c as resolveThinkingProfile, f as normalizeThinkLevel } from "../../thinking-BGXuEoVl.js";
-import { p as resolveThinkingDefault } from "../../model-selection-BOeJUkj5.js";
+import { p as resolveThinkingDefault } from "../../model-selection-CEBK4_Qq.js";
 import { t as resolveAgentTimeoutMs } from "../../timeout-BqDEuVvO.js";
 import { o as requestHeartbeat } from "../../heartbeat-wake-CqCXCGVD.js";
 import { a as enqueueSystemEvent } from "../../system-events-B624oJ88.js";
-import { p as listTasksForFlowId } from "../../task-registry-iSTS0efK.js";
+import { p as listTasksForFlowId } from "../../task-registry-BaF4NUvh.js";
 import { n as summarizeTaskRecords } from "../../task-registry.summary-BLwFxKE9.js";
-import "../../runtime-internal-Ci13K_Yk.js";
-import { _ as resolveTaskFlowForLookupTokenForOwner, g as listTaskFlowsForOwner, h as getTaskFlowByIdForOwner, l as getFlowTaskSummary, m as findLatestTaskFlowForOwner, t as cancelDetachedTaskRunById } from "../../task-executor-C4uXdIpK.js";
-import { n as generateMusic, r as listRuntimeMusicGenerationProviders } from "../../openclaw-tools-CtTTSVo_.js";
+import "../../runtime-internal-haeGXAjT.js";
+import { _ as resolveTaskFlowForLookupTokenForOwner, g as listTaskFlowsForOwner, h as getTaskFlowByIdForOwner, l as getFlowTaskSummary, m as findLatestTaskFlowForOwner, t as cancelDetachedTaskRunById } from "../../task-executor-Z4skf7Hh.js";
+import { n as generateMusic, r as listRuntimeMusicGenerationProviders } from "../../openclaw-tools-BXnLknLG.js";
 import { _ as mediaKindFromMime, n as detectMime } from "../../mime-BgNEXalX.js";
 import { l as ensureAgentWorkspace } from "../../workspace-Bn82tdyb.js";
 import { a as getImageMetadata, l as resizeToJpeg } from "../../image-ops-4w9BpGv_.js";
 import { n as createLazyRuntimeMethodBinder, r as createLazyRuntimeModule, t as createLazyRuntimeMethod } from "../../lazy-runtime-c1rtOl10.js";
-import { n as listRuntimeImageGenerationProviders, t as generateImage } from "../../runtime-C6ukwzd1.js";
-import { t as loadWebMedia } from "../../web-media-ev5bnB98.js";
+import { n as listRuntimeImageGenerationProviders, t as generateImage } from "../../runtime-CYkKjyXq.js";
+import { t as loadWebMedia } from "../../web-media-VOXcDkF3.js";
 import { n as resolveAgentIdentity } from "../../identity-BJqKZTLs.js";
-import { a as getTaskByIdForOwner, o as listTasksForRelatedSessionKeyForOwner, r as findLatestTaskForRelatedSessionKeyForOwner, s as resolveTaskForLookupTokenForOwner } from "../../task-owner-access-DuWj9Y3C.js";
-import { n as listRuntimeVideoGenerationProviders, t as generateVideo } from "../../runtime-_IseR1FS.js";
-import { i as runWebSearch, r as listWebSearchProviders } from "../../runtime-C60Zs5zm.js";
+import { a as getTaskByIdForOwner, o as listTasksForRelatedSessionKeyForOwner, r as findLatestTaskForRelatedSessionKeyForOwner, s as resolveTaskForLookupTokenForOwner } from "../../task-owner-access-Bj8lj0Cy.js";
+import { n as listRuntimeVideoGenerationProviders, t as generateVideo } from "../../runtime-Bv6qTyNT.js";
+import { i as runWebSearch, r as listWebSearchProviders } from "../../runtime-C17KP1c6.js";
 import { t as RequestScopedSubagentRuntimeError } from "../../error-runtime-CLFIkpmb.js";
 import { i as setGatewaySubagentRuntime, n as gatewaySubagentState, r as setGatewayNodesRuntime, t as clearGatewaySubagentRuntime } from "../../gateway-bindings-sqslFIIx.js";
-import { t as createRuntimeChannel } from "../../runtime-channel-CSGbde6a.js";
+import { t as createRuntimeChannel } from "../../runtime-channel-rAcLN7UY.js";
 import { r as isVoiceCompatibleAudio } from "../../audio-xjdmMA1L.js";
-import { t as createRuntimeTaskFlow } from "../../runtime-taskflow-CoA54NO9.js";
+import { t as createRuntimeTaskFlow } from "../../runtime-taskflow-kHDBnw2U.js";
 //#region src/plugins/runtime/runtime-cache.ts
 function defineCachedValue(target, key, create) {
 	let cached;
@@ -61,7 +61,7 @@ function defineCachedValue(target, key, create) {
 }
 //#endregion
 //#region src/plugins/runtime/runtime-agent.ts
-const loadEmbeddedPiRuntime = createLazyRuntimeModule(() => import("../../runtime-embedded-pi.runtime-ChsO--5A.js"));
+const loadEmbeddedPiRuntime = createLazyRuntimeModule(() => import("../../runtime-embedded-pi.runtime-HnLZx4XT.js"));
 function resolveRuntimeThinkingCatalog(params) {
 	if (params.catalog) return params.catalog;
 	const configuredCatalog = buildConfiguredModelCatalog({ cfg: getRuntimeConfig() });
@@ -192,7 +192,7 @@ function formatNativeDependencyHint(params) {
 }
 //#endregion
 //#region src/plugins/runtime/runtime-system.ts
-const runHeartbeatOnceInternal = createLazyRuntimeMethod(createLazyRuntimeModule(() => import("../../heartbeat-runner-DjKYiJ0u.js")), (runtime) => runtime.runHeartbeatOnce);
+const runHeartbeatOnceInternal = createLazyRuntimeMethod(createLazyRuntimeModule(() => import("../../heartbeat-runner-DPR5MCp_.js")), (runtime) => runtime.runHeartbeatOnce);
 function createRuntimeSystem() {
 	const requestHeartbeatNow = (opts) => requestHeartbeat({
 		source: opts?.source ?? "other",
@@ -431,8 +431,8 @@ function createRuntimeTasks(params) {
 //#endregion
 //#region src/plugins/runtime/index.ts
 const loadTtsRuntime = createLazyRuntimeModule(() => import("../../tts-BgqKdt55.js"));
-const loadMediaUnderstandingRuntime = createLazyRuntimeModule(() => import("../../runtime-D-Ur8qyH.js"));
-const loadModelAuthRuntime = createLazyRuntimeModule(() => import("../../runtime-model-auth.runtime-BZWGZ97F.js"));
+const loadMediaUnderstandingRuntime = createLazyRuntimeModule(() => import("../../runtime-WWdC1yQJ.js"));
+const loadModelAuthRuntime = createLazyRuntimeModule(() => import("../../runtime-model-auth.runtime-CfQlEi_1.js"));
 function createRuntimeTts() {
 	const bindTtsRuntime = createLazyRuntimeMethodBinder(loadTtsRuntime);
 	return {

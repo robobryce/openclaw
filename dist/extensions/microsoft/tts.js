@@ -1,2 +1,2 @@
-import { n as inferEdgeExtension, t as edgeTTS } from "../../tts-CNn29IQz.js";
+import { n as inferEdgeExtension, t as edgeTTS } from "../../tts-COLOQAuO.js";
 export { edgeTTS, inferEdgeExtension };

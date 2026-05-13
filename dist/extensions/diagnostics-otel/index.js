@@ -17225,19 +17225,19 @@ var require_getMachineId = /* @__PURE__ */ __commonJSMin(((exports) => {
 	async function getMachineId() {
 		if (!getMachineIdImpl) switch (process$1.platform) {
 			case "darwin":
-				getMachineIdImpl = (await import("../../getMachineId-darwin-BNFGxXLR.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
+				getMachineIdImpl = (await import("../../getMachineId-darwin-DRJUteuQ.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
 				break;
 			case "linux":
-				getMachineIdImpl = (await import("../../getMachineId-linux-B8WtIoFm.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
+				getMachineIdImpl = (await import("../../getMachineId-linux-DvW_O_wX.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
 				break;
 			case "freebsd":
-				getMachineIdImpl = (await import("../../getMachineId-bsd-Bc1tINFU.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
+				getMachineIdImpl = (await import("../../getMachineId-bsd-BXgjZIch.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
 				break;
 			case "win32":
-				getMachineIdImpl = (await import("../../getMachineId-win-DODnRoO3.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
+				getMachineIdImpl = (await import("../../getMachineId-win-BHS-GKnO.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
 				break;
 			default:
-				getMachineIdImpl = (await import("../../getMachineId-unsupported-E5sWS70E.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
+				getMachineIdImpl = (await import("../../getMachineId-unsupported-BHHOpL6p.js").then((m) => /* @__PURE__ */ __toESM(m.default))).getMachineId;
 				break;
 		}
 		return getMachineIdImpl();

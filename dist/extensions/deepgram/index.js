@@ -1,6 +1,6 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { t as deepgramMediaUnderstandingProvider } from "../../media-understanding-provider-BBMcp5PG.js";
-import { n as buildDeepgramRealtimeTranscriptionProvider } from "../../realtime-transcription-provider-BIz-jIDZ.js";
+import { n as buildDeepgramRealtimeTranscriptionProvider } from "../../realtime-transcription-provider-BkNr9dZG.js";
 //#region extensions/deepgram/index.ts
 var deepgram_default = definePluginEntry({
 	id: "deepgram",

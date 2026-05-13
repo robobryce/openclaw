@@ -1,4 +1,4 @@
-import { t as resolveOpenRouterThinkingProfile } from "../../thinking-policy-qBTcJnJR.js";
+import { t as resolveOpenRouterThinkingProfile } from "../../thinking-policy-6l3nwkym.js";
 //#region extensions/openrouter/provider-policy-api.ts
 function resolveThinkingProfile(params) {
 	return resolveOpenRouterThinkingProfile(params.modelId);

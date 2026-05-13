@@ -1,2 +1,2 @@
-import { t as buildGradiumSpeechProvider } from "../../speech-provider-eVrjSTg9.js";
+import { t as buildGradiumSpeechProvider } from "../../speech-provider-DPLTSHxN.js";
 export { buildGradiumSpeechProvider };

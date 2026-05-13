@@ -7,10 +7,10 @@ import { n as resolveCronStyleNow } from "../../current-time-DDFOJpVF.js";
 import { t as resolveMemorySearchConfig } from "../../memory-search-DpGotxbQ.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { t as resolveMemoryBackendConfig } from "../../backend-config-S0ZIhkny.js";
-import "../../memory-core-host-runtime-core-CUcMATxY.js";
-import "../../memory-core-host-runtime-files-CrLIoJAo.js";
-import { t as registerShortTermPromotionDreaming } from "../../dreaming-Cr5KnE26.js";
-import { i as registerBuiltInMemoryEmbeddingProviders } from "../../provider-adapters-D2OnTgRh.js";
+import "../../memory-core-host-runtime-core-BzW-xkRE.js";
+import "../../memory-core-host-runtime-files-2SWA0zJJ.js";
+import { t as registerShortTermPromotionDreaming } from "../../dreaming-HR-ou8cX.js";
+import { i as registerBuiltInMemoryEmbeddingProviders } from "../../provider-adapters-CuO8ZOK-.js";
 const MEMORY_FLUSH_TARGET_HINT = "Store durable memories only in memory/YYYY-MM-DD.md (create memory/ if needed).";
 const MEMORY_FLUSH_APPEND_ONLY_HINT = "If memory/YYYY-MM-DD.md already exists, APPEND new content only and do not overwrite existing entries.";
 const MEMORY_FLUSH_READ_ONLY_HINT = "Treat workspace bootstrap/reference files such as MEMORY.md, DREAMS.md, SOUL.md, TOOLS.md, and AGENTS.md as read-only during this flush; never overwrite, replace, or edit them.";
@@ -113,11 +113,11 @@ const buildPromptSection = ({ availableTools, citationsMode }) => {
 let memoryToolsModulePromise;
 let runtimeProviderModulePromise;
 function loadMemoryToolsModule() {
-	memoryToolsModulePromise ??= import("../../tools-BoVLeEJd.js");
+	memoryToolsModulePromise ??= import("../../tools-DqbmQFPC.js");
 	return memoryToolsModulePromise;
 }
 function loadRuntimeProviderModule() {
-	runtimeProviderModulePromise ??= import("../../runtime-provider-D6_cwwgU.js");
+	runtimeProviderModulePromise ??= import("../../runtime-provider-bIoQMjm4.js");
 	return runtimeProviderModulePromise;
 }
 function getToolConfig(options) {
@@ -260,12 +260,12 @@ var memory_core_default = definePluginEntry({
 			description: "Enable or disable memory dreaming.",
 			acceptsArgs: true,
 			handler: async (ctx) => {
-				const { handleDreamingCommand } = await import("../../dreaming-command-CsZF6dpd.js");
+				const { handleDreamingCommand } = await import("../../dreaming-command-CRFxBK5J.js");
 				return await handleDreamingCommand(api, ctx);
 			}
 		});
 		api.registerCli(async ({ program }) => {
-			const { registerMemoryCli } = await import("../../cli-ywZ3rbXS.js");
+			const { registerMemoryCli } = await import("../../cli-BN8taImb.js");
 			registerMemoryCli(program);
 		}, { descriptors: [{
 			name: "memory",

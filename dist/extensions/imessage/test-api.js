@@ -1,6 +1,6 @@
 import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XVt9.js";
 import { n as resolveOutboundSendDep } from "../../send-deps-DGn5WUfI.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { c as collectStatusIssuesFromLastError } from "../../status-helpers-Q6qpKJsI.js";
 //#region extensions/imessage/src/imessage.test-plugin.ts
 function normalizeIMessageTestHandle(raw) {

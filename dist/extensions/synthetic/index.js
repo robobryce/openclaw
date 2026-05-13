@@ -1,4 +1,4 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { r as SYNTHETIC_DEFAULT_MODEL_REF } from "../../models-BO0lcQSL.js";
 import { t as applySyntheticConfig } from "../../onboard-BaX5RC7t.js";
 import { t as buildSyntheticProvider } from "../../provider-catalog-Da1yLKpQ.js";

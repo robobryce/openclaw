@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as buildRunwayVideoGenerationProvider } from "../../video-generation-provider-BIAgwfPE.js";
+import { t as buildRunwayVideoGenerationProvider } from "../../video-generation-provider-BVzHxgTi.js";
 //#region extensions/runway/index.ts
 var runway_default = definePluginEntry({
 	id: "runway",

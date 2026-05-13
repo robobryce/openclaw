@@ -1,5 +1,5 @@
-import { i as resolveAnthropicVertexConfigApiKey, t as hasAnthropicVertexAvailableAuth } from "../../region-CG6DJxfq.js";
-import { n as buildAnthropicVertexProvider } from "../../provider-catalog-RG5bAYK4.js";
+import { i as resolveAnthropicVertexConfigApiKey, t as hasAnthropicVertexAvailableAuth } from "../../region-UVrmTgNX.js";
+import { n as buildAnthropicVertexProvider } from "../../provider-catalog-lBVRyeRk.js";
 //#region extensions/anthropic-vertex/provider-discovery.ts
 const PROVIDER_ID = "anthropic-vertex";
 const GCP_VERTEX_CREDENTIALS_MARKER = "gcp-vertex-credentials";

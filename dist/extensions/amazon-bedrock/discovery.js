@@ -1,2 +1,2 @@
-import { n as resetBedrockDiscoveryCacheForTest, r as resolveImplicitBedrockProvider, t as discoverBedrockModels } from "../../discovery-Dw5Eln0K.js";
+import { n as resetBedrockDiscoveryCacheForTest, r as resolveImplicitBedrockProvider, t as discoverBedrockModels } from "../../discovery-D0SXEOvP.js";
 export { discoverBedrockModels, resetBedrockDiscoveryCacheForTest, resolveImplicitBedrockProvider };

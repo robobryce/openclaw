@@ -1,16 +1,16 @@
-import { i as isProxyReasoningUnsupported, n as createOpenRouterSystemCacheWrapper, r as createOpenRouterWrapper } from "../../proxy-stream-wrappers-BhVig3_R.js";
+import { i as isProxyReasoningUnsupported, n as createOpenRouterSystemCacheWrapper, r as createOpenRouterWrapper } from "../../proxy-stream-wrappers-DtCQXk7R.js";
 import { i as PASSTHROUGH_GEMINI_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
 import { r as readConfiguredProviderCatalogEntries } from "../../provider-catalog-shared-Dh8sLNjN.js";
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
-import "../../provider-stream-Bntg9LOt.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
+import "../../provider-stream-D6cRcTfA.js";
 import { r as DEEPINFRA_DEFAULT_MODEL_REF } from "../../provider-models-BVGk0wrN.js";
-import { t as buildDeepInfraImageGenerationProvider } from "../../image-generation-provider-BtJ2HAT4.js";
-import { t as deepinfraMediaUnderstandingProvider } from "../../media-understanding-provider-DBD_u-7v.js";
-import { t as deepinfraMemoryEmbeddingProviderAdapter } from "../../memory-embedding-adapter-CZ4Ktq3H.js";
+import { t as buildDeepInfraImageGenerationProvider } from "../../image-generation-provider-umWqPFId.js";
+import { t as deepinfraMediaUnderstandingProvider } from "../../media-understanding-provider-DrcLFiSG.js";
+import { t as deepinfraMemoryEmbeddingProviderAdapter } from "../../memory-embedding-adapter-BUA1nf_t.js";
 import { t as applyDeepInfraConfig } from "../../onboard-DSRHvhmG.js";
 import { n as buildStaticDeepInfraProvider, t as buildDeepInfraProvider } from "../../provider-catalog-Cj032Dv2.js";
-import { t as buildDeepInfraSpeechProvider } from "../../speech-provider-D3iGPR3l.js";
-import { t as buildDeepInfraVideoGenerationProvider } from "../../video-generation-provider-Dh5YuNN2.js";
+import { t as buildDeepInfraSpeechProvider } from "../../speech-provider-DPnNvMg_.js";
+import { t as buildDeepInfraVideoGenerationProvider } from "../../video-generation-provider-DxSzfhv6.js";
 //#region extensions/deepinfra/index.ts
 const PROVIDER_ID = "deepinfra";
 var deepinfra_default = defineSingleProviderPluginEntry({

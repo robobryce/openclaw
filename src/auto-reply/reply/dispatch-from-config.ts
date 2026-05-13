@@ -979,8 +979,15 @@ export async function dispatchReplyFromConfig(
 
     const isSlackNonDirectSurface =
       (ctx.Surface === "slack" || ctx.Provider === "slack") && ctx.ChatType !== "direct";
+    // ACP sessions are explicit operator opt-ins for long-running interactive
+    // agent work — tool calls, plan commitments, usage updates, and refusals
+    // are the signal the operator opened the session to watch. Suppressing
+    // them for chat-surface "casual group" heuristics leaves the session
+    // channel silent for minutes at a time and breaks observability.
+    const isAcpBoundDispatch = Boolean(boundAcpDispatchSessionKey);
     const shouldSendVerboseProgressMessages =
-      !isSlackNonDirectSurface && (ctx.ChatType !== "group" || ctx.IsForum === true);
+      isAcpBoundDispatch ||
+      (!isSlackNonDirectSurface && (ctx.ChatType !== "group" || ctx.IsForum === true));
     const shouldSendToolSummaries = shouldSendVerboseProgressMessages;
     const shouldSendToolStartStatuses = shouldSendVerboseProgressMessages;
     const sendFinalPayload = async (

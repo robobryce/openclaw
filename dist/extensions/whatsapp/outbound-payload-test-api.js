@@ -1,2 +1,2 @@
-import { t as whatsappOutbound } from "../../outbound-adapter-D_JM5jQJ.js";
+import { t as whatsappOutbound } from "../../outbound-adapter-C4G0j67w.js";
 export { whatsappOutbound };
