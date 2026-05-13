@@ -1,2 +1,2 @@
-import { t as generateSlugViaLLM } from "./llm-slug-generator-GU5z77GP.js";
+import { t as generateSlugViaLLM } from "./llm-slug-generator-DQN90Uxs.js";
 export { generateSlugViaLLM };

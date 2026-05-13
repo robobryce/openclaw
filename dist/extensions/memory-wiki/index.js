@@ -2,7 +2,7 @@ import { i as formatErrorMessage } from "../../errors-SdKPttvI.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import "../../error-runtime-CLFIkpmb.js";
 import "../../api-N7n9N80u.js";
-import { A as lintMemoryWikiVault, B as parseWikiMarkdown, C as resolveMemoryWikiStatus, D as runObsidianDaily, E as runObsidianCommand, F as getMemoryWikiPage, I as readQueryableWikiPages, L as searchMemoryWiki, M as applyMemoryWikiMutation, N as normalizeMemoryWikiMutationInput, O as runObsidianOpen, P as WIKI_SEARCH_MODES, R as compileMemoryWikiVault, S as renderMemoryWikiStatus, T as probeObsidianCli, j as ingestMemoryWikiSource, k as runObsidianSearch, t as registerWikiCli, w as syncMemoryWikiImportedSources, x as buildMemoryWikiDoctorReport, z as initializeMemoryWikiVault } from "../../cli-Cc_ClY-0.js";
+import { A as lintMemoryWikiVault, B as parseWikiMarkdown, C as resolveMemoryWikiStatus, D as runObsidianDaily, E as runObsidianCommand, F as getMemoryWikiPage, I as readQueryableWikiPages, L as searchMemoryWiki, M as applyMemoryWikiMutation, N as normalizeMemoryWikiMutationInput, O as runObsidianOpen, P as WIKI_SEARCH_MODES, R as compileMemoryWikiVault, S as renderMemoryWikiStatus, T as probeObsidianCli, j as ingestMemoryWikiSource, k as runObsidianSearch, t as registerWikiCli, w as syncMemoryWikiImportedSources, x as buildMemoryWikiDoctorReport, z as initializeMemoryWikiVault } from "../../cli-BrDneF58.js";
 import { d as resolveMemoryWikiConfig, l as memoryWikiConfigSchema, o as WIKI_SEARCH_BACKENDS, s as WIKI_SEARCH_CORPORA } from "../../config-BvFF1_u2.js";
 import fs from "node:fs";
 import path from "node:path";

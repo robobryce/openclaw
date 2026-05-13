@@ -8,12 +8,12 @@ import { r as withTempWorkspace } from "../../private-temp-workspace-DqSvwJmi.js
 import { t as loadJsonFile } from "../../json-store-Cq-yfJmX.js";
 import { t as sanitizeEnvVars } from "../../sanitize-env-vars-C-3EHLI3.js";
 import { _ as createRemoteShellSandboxFsBridge, b as createWritableRenameTargetResolver, c as buildExecRemoteCommand, d as createSshSandboxSessionFromConfigText, h as shellEscape, m as runSshSandboxCommand, o as registerSandboxBackend, p as disposeSshSandboxSession } from "../../browser-bridges-DTUx4gcw.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { n as buildPluginConfigSchema } from "../../config-schema-D2jcl2zK.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../core-C1k2IcgS.js";
+import "../../core-BGteDoGl.js";
 import { t as runPluginCommandWithTimeout } from "../../run-command-BMpfmZC6.js";
-import "../../sandbox-DNSQq02I.js";
+import "../../sandbox-equkCCfd.js";
 import "../../file-access-runtime-Y_oCkIxH.js";
 import { c as mapPluginConfigIssues, s as formatPluginConfigIssue } from "../../extension-shared-DFOfVxv4.js";
 import { t as zod_exports } from "../../zod-DVVrbDMY.js";

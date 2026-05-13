@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as registerBedrockMantlePlugin } from "../../register.sync.runtime-TUzbHV2l.js";
+import { t as registerBedrockMantlePlugin } from "../../register.sync.runtime-Lw9Di0jG.js";
 //#region extensions/amazon-bedrock-mantle/index.ts
 var amazon_bedrock_mantle_default = definePluginEntry({
 	id: "amazon-bedrock-mantle",

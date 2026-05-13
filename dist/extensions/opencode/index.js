@@ -1,13 +1,13 @@
 import { a as normalizeLowercaseStringOrEmpty } from "../../string-coerce-Bje8XVt9.js";
 import { f as matchesExactOrPrefix, i as PASSTHROUGH_GEMINI_REPLAY_HOOKS, u as resolveClaudeThinkingProfile } from "../../provider-model-shared-R5UEMBKm.js";
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
-import "../../text-runtime-l35dVOXw.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { t as OPENCODE_ZEN_DEFAULT_MODEL } from "../../provider-onboard-BPo6fEEZ.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
 import { n as applyOpencodeZenConfig } from "../../onboard-Khoo-KHk.js";
 import "../../api-DMHSJKCO.js";
-import { t as opencodeMediaUnderstandingProvider } from "../../media-understanding-provider-0VKZZqdQ.js";
+import { t as opencodeMediaUnderstandingProvider } from "../../media-understanding-provider-amKdo3Di.js";
 //#region extensions/opencode/index.ts
 const PROVIDER_ID = "opencode";
 const MINIMAX_MODERN_MODEL_MATCHERS = ["minimax-m2.7"];

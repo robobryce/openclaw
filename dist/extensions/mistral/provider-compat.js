@@ -1,2 +1,2 @@
-import { t as contributeMistralResolvedModelCompat } from "../../provider-compat-DJYnN0Uh.js";
+import { t as contributeMistralResolvedModelCompat } from "../../provider-compat-BAsR4hJE.js";
 export { contributeMistralResolvedModelCompat };

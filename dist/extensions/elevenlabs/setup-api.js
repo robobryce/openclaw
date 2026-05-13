@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { n as migrateElevenLabsLegacyTalkConfig } from "../../config-compat-DZ8Fisgc.js";
+import { n as migrateElevenLabsLegacyTalkConfig } from "../../config-compat-ZLRJ6efH.js";
 //#region extensions/elevenlabs/setup-api.ts
 var setup_api_default = definePluginEntry({
 	id: "elevenlabs",

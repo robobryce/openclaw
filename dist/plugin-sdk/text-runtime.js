@@ -8,14 +8,14 @@ import { a as getLogger, c as resetLogger, d as toPinoLikeLogger, i as getChildL
 import { a as logWarn, i as logSuccess, n as logError, r as logInfo, t as logDebug } from "../logger-C190dODJ.js";
 import { t as sanitizeTerminalText } from "../safe-text-CFwWGKAm.js";
 import { a as asRecord, i as asOptionalRecord, n as asNullableRecord, o as readStringField, r as asOptionalObjectRecord, t as asNullableObjectRecord } from "../record-coerce-CAi9Wuk4.js";
-import { _ as stopDiagnosticHeartbeat, a as logRunAttempt, c as logToolLoopAction, d as logWebhookReceived, f as markDiagnosticSessionProgress, g as startDiagnosticHeartbeat, h as resolveStuckSessionWarnMs, i as logMessageQueued, l as logWebhookError, m as resolveStuckSessionAbortMs, n as logActiveRuns, o as logSessionAttention, p as resetDiagnosticStateForTest, r as logMessageProcessed, s as logSessionStateChange, t as getDiagnosticSessionStateCountForTest, u as logWebhookProcessed } from "../diagnostic-D8XF5_t3.js";
+import { _ as stopDiagnosticHeartbeat, a as logRunAttempt, c as logToolLoopAction, d as logWebhookReceived, f as markDiagnosticSessionProgress, g as startDiagnosticHeartbeat, h as resolveStuckSessionWarnMs, i as logMessageQueued, l as logWebhookError, m as resolveStuckSessionAbortMs, n as logActiveRuns, o as logSessionAttention, p as resetDiagnosticStateForTest, r as logMessageProcessed, s as logSessionStateChange, t as getDiagnosticSessionStateCountForTest, u as logWebhookProcessed } from "../diagnostic-D1ffJUEg.js";
 import { i as logLaneEnqueue, r as logLaneDequeue, t as diagnosticLogger } from "../diagnostic-runtime-D23MJZf_.js";
 import { a as stripDowngradedToolCallText, c as stripToolCallXmlTags, f as findCodeRegions, i as stripAssistantInternalScaffolding, l as hasOrphanReasoningCloseBoundary, n as sanitizeAssistantVisibleTextWithOptions, o as stripLegacyBracketToolCallBlocks, p as isInsideCode, r as sanitizeAssistantVisibleTextWithProfile, s as stripMinimaxToolCallXml, t as sanitizeAssistantVisibleText, u as stripReasoningTagsFromText } from "../assistant-visible-text-D9N7W6q2.js";
 import { n as sha256HexPrefix, t as redactIdentifier } from "../redact-identifier-DI2_YgdQ.js";
 import { n as buildTimeoutAbortSignal, r as fetchWithTimeout, t as bindAbortRelay } from "../fetch-timeout-jLriTKA5.js";
 import { a as stripInlineDirectiveTagsFromMessageForDisplay, i as stripInlineDirectiveTagsForDisplay, n as sanitizeReplyDirectiveId, r as stripInlineDirectiveTagsForDelivery, t as parseInlineDirectives } from "../directive-tags-DbGwr2Y2.js";
 import { a as markdownToIRWithMeta, i as markdownToIR, n as renderMarkdownWithMarkers, o as sliceMarkdownIR, r as chunkMarkdownIR, t as convertMarkdownTables } from "../tables-DPya_LrH.js";
-import { i as renderMarkdownIRChunksWithinLimit, n as chunkItems, r as stripMarkdown, t as resolveReactionLevel } from "../text-runtime-l35dVOXw.js";
+import { i as renderMarkdownIRChunksWithinLimit, n as chunkItems, r as stripMarkdown, t as resolveReactionLevel } from "../text-runtime-BwruZakL.js";
 import { t as createScopedExpiringIdCache } from "../scoped-expiring-id-cache-Cf6jYBKU.js";
 import { t as summarizeStringEntries } from "../string-sample-Dt6J9PLC.js";
 import { n as isAutoLinkedFileRef, t as FILE_REF_EXTENSIONS_WITH_TLD } from "../auto-linked-file-ref-DhCnnQD4.js";

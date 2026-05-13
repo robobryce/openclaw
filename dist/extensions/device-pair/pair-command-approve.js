@@ -1,8 +1,8 @@
 import { a as normalizeLowercaseStringOrEmpty, c as normalizeOptionalString } from "../../string-coerce-Bje8XVt9.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { n as approveDevicePairing } from "../../device-pairing-BfbEaNK4.js";
-import "../../api-BK6NS1C3.js";
-import { r as formatPendingRequests } from "../../notify-D3-gRrRg.js";
+import "../../api-D3gPEjxI.js";
+import { r as formatPendingRequests } from "../../notify-JYoNVJt7.js";
 //#region extensions/device-pair/pair-command-approve.ts
 function buildMultiplePendingApprovalReply(pending) {
 	return { text: `${formatPendingRequests(pending)}\n\nMultiple pending requests found. Approve one explicitly:

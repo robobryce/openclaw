@@ -3,9 +3,9 @@ import { n as resolvePreferredOpenClawTmpDir } from "../../tmp-openclaw-dir-B4r8
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { n as resolveGatewayBindUrl, t as resolveTailnetHostWithRunner } from "../../tailscale-status-DJi3L-L-.js";
 import { t as runPluginCommandWithTimeout } from "../../run-command-BMpfmZC6.js";
-import { d as writeQrPngTempFile, l as renderQrPngBase64, u as renderQrPngDataUrl } from "../../media-runtime-CLb91OTp.js";
+import { d as writeQrPngTempFile, l as renderQrPngBase64, u as renderQrPngDataUrl } from "../../media-runtime-ElMrhsqI.js";
 import { t as PAIRING_SETUP_BOOTSTRAP_PROFILE } from "../../device-bootstrap-profile-CSmOc94_.js";
 import { l as listDevicePairing, n as approveDevicePairing } from "../../device-pairing-BfbEaNK4.js";
 import { i as issueDeviceBootstrapToken, o as revokeDeviceBootstrapToken, t as clearDeviceBootstrapTokens } from "../../device-bootstrap-a3oQG5fE.js";
-import "../../api-BK6NS1C3.js";
+import "../../api-D3gPEjxI.js";
 export { PAIRING_SETUP_BOOTSTRAP_PROFILE, approveDevicePairing, clearDeviceBootstrapTokens, definePluginEntry, issueDeviceBootstrapToken, listDevicePairing, renderQrPngBase64, renderQrPngDataUrl, resolveGatewayBindUrl, resolveGatewayPort, resolvePreferredOpenClawTmpDir, resolveTailnetHostWithRunner, revokeDeviceBootstrapToken, runPluginCommandWithTimeout, writeQrPngTempFile };

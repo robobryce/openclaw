@@ -1,2 +1,2 @@
-import { t as registerSlackPluginHttpRoutes } from "../../plugin-routes-CqCNnW7n.js";
+import { t as registerSlackPluginHttpRoutes } from "../../plugin-routes-cBsOMJJP.js";
 export { registerSlackPluginHttpRoutes };

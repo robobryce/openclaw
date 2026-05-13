@@ -1,4 +1,4 @@
-import { t as inspectSlackAccount } from "../../account-inspect-CtsidksG.js";
+import { t as inspectSlackAccount } from "../../account-inspect-Cu7imwq1.js";
 //#region extensions/slack/account-inspect-api.ts
 function inspectSlackReadOnlyAccount(cfg, accountId) {
 	return inspectSlackAccount({

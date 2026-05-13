@@ -1,2 +1,2 @@
-import { t as bluebubblesPlugin } from "../../channel-DLI3ocpW.js";
+import { t as bluebubblesPlugin } from "../../channel-6a5vuEi-.js";
 export { bluebubblesPlugin };

@@ -1,7 +1,7 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { i as SGLANG_PROVIDER_LABEL, n as SGLANG_DEFAULT_BASE_URL, r as SGLANG_MODEL_PLACEHOLDER, t as SGLANG_DEFAULT_API_KEY_ENV_VAR } from "../../defaults-C6-Ab1t0.js";
-import { t as buildSglangProvider } from "../../models-CQA8f3U6.js";
-import "../../api-J24Z530y.js";
+import { t as buildSglangProvider } from "../../models-D3r9u0CC.js";
+import "../../api-Bmb1m0MG.js";
 //#region extensions/sglang/index.ts
 const PROVIDER_ID = "sglang";
 async function loadProviderSetup() {

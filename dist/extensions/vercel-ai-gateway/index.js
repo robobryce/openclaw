@@ -1,7 +1,7 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { n as applyVercelAiGatewayConfig, t as VERCEL_AI_GATEWAY_DEFAULT_MODEL_REF } from "../../onboard-BwQymgjA.js";
 import { n as buildVercelAiGatewayProvider, t as buildStaticVercelAiGatewayProvider } from "../../provider-catalog-D_5uVg8M.js";
-import { t as resolveVercelAiGatewayThinkingProfile } from "../../thinking-BjznlAeL.js";
+import { t as resolveVercelAiGatewayThinkingProfile } from "../../thinking-CuZr4FDl.js";
 var vercel_ai_gateway_default = defineSingleProviderPluginEntry({
 	id: "vercel-ai-gateway",
 	name: "Vercel AI Gateway Provider",

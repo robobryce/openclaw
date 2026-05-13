@@ -1,6 +1,6 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
-import { n as applyHuggingfaceConfig, t as HUGGINGFACE_DEFAULT_MODEL_REF } from "../../onboard-Bfa8JWXD.js";
-import { t as buildHuggingfaceProvider } from "../../provider-catalog-DMbJ4mAJ.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
+import { n as applyHuggingfaceConfig, t as HUGGINGFACE_DEFAULT_MODEL_REF } from "../../onboard-B9Vjej3P.js";
+import { t as buildHuggingfaceProvider } from "../../provider-catalog-BJP9cCx7.js";
 //#region extensions/huggingface/index.ts
 const PROVIDER_ID = "huggingface";
 var huggingface_default = defineSingleProviderPluginEntry({

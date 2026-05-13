@@ -1,12 +1,12 @@
 import { c as normalizeOptionalString } from "./string-coerce-Bje8XVt9.js";
 import { t as createSubsystemLogger } from "./subsystem-4YsHcs_C.js";
-import { S as disposeRegisteredAgentHarnesses } from "./loader-D6aoAKZU.js";
+import { S as disposeRegisteredAgentHarnesses } from "./loader-CNBOmExt.js";
 import { m as triggerInternalHook, n as createInternalHookEvent } from "./internal-hooks-D9sZdVu7.js";
 import { n as closePluginStateSqliteStore } from "./plugin-state-store-Bj6RGMie.js";
 import { i as listChannelPlugins } from "./registry-CA3xQtyM.js";
 import "./plugins-C-IBDTFz.js";
 import { i as disposeAllSessionMcpRuntimes } from "./pi-bundle-mcp-runtime-Cdxb5RSd.js";
-import "./pi-bundle-mcp-tools-ClEPbFMQ.js";
+import "./pi-bundle-mcp-tools-DSlSbYo6.js";
 //#region src/gateway/server-close.ts
 const shutdownLog = createSubsystemLogger("gateway/shutdown");
 const GATEWAY_SHUTDOWN_HOOK_TIMEOUT_MS = 1e3;
@@ -82,11 +82,11 @@ async function disposeRuntimeWithShutdownGrace(params) {
 	disposeTimeout.clear();
 }
 async function disposeAllBundleLspRuntimesOnDemand() {
-	const { disposeAllBundleLspRuntimes } = await import("./pi-bundle-lsp-runtime-843DTt_H.js");
+	const { disposeAllBundleLspRuntimes } = await import("./pi-bundle-lsp-runtime-C8Tyhv2f.js");
 	await disposeAllBundleLspRuntimes();
 }
 async function stopGmailWatcherOnDemand() {
-	const { stopGmailWatcher } = await import("./gmail-watcher-BjNzjwAn.js");
+	const { stopGmailWatcher } = await import("./gmail-watcher-B6yytrMN.js");
 	await stopGmailWatcher();
 }
 async function runGatewayClosePrelude(params) {

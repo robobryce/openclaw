@@ -1,11 +1,11 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { A as isQwenCodingPlanBaseUrl, h as QWEN_DEFAULT_MODEL_REF, u as QWEN_36_PLUS_MODEL_ID, x as applyQwenNativeStreamingUsageCompat } from "../../models-oetV8cuD.js";
 import { n as buildQwenProvider } from "../../provider-catalog-B7RgJnE7.js";
-import { n as wrapQwenProviderStream } from "../../stream-CbG8OWpv.js";
-import "../../api-ClIJWnQL.js";
-import { t as buildQwenMediaUnderstandingProvider } from "../../media-understanding-provider-CUUzDAsc.js";
+import { n as wrapQwenProviderStream } from "../../stream-DCmFg5hF.js";
+import "../../api-Bzq9LGNG.js";
+import { t as buildQwenMediaUnderstandingProvider } from "../../media-understanding-provider-CNQu32aw.js";
 import { d as applyQwenStandardConfig, f as applyQwenStandardConfigCn, l as applyQwenConfig, u as applyQwenConfigCn } from "../../onboard-Ds22QdV5.js";
-import { t as buildQwenVideoGenerationProvider } from "../../video-generation-provider-BHLmvuRc.js";
+import { t as buildQwenVideoGenerationProvider } from "../../video-generation-provider-BHuK6EwW.js";
 //#region extensions/qwen/index.ts
 const PROVIDER_ID = "qwen";
 const LEGACY_PROVIDER_ID = "modelstudio";

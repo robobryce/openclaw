@@ -1,2 +1,2 @@
-import { t as mattermostPlugin } from "../../channel-plugin-runtime-Dm9HaPm4.js";
+import { t as mattermostPlugin } from "../../channel-plugin-runtime-BFAP2p7t.js";
 export { mattermostPlugin };

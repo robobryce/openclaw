@@ -1,12 +1,12 @@
 import { i as PASSTHROUGH_GEMINI_REPLAY_HOOKS } from "../../provider-model-shared-R5UEMBKm.js";
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
 import { n as applyOpencodeGoConfig, t as OPENCODE_GO_DEFAULT_MODEL_REF } from "../../onboard-CREc2eJl.js";
 import "../../api-OSsatRhu.js";
-import { t as opencodeGoMediaUnderstandingProvider } from "../../media-understanding-provider-DTB1yYjS.js";
+import { t as opencodeGoMediaUnderstandingProvider } from "../../media-understanding-provider-DAw6DYG0.js";
 import { n as normalizeOpencodeGoBaseUrl, r as resolveOpencodeGoSupplementalModel, t as listOpencodeGoSupplementalModelCatalogEntries } from "../../provider-catalog-9yU-t6Ah.js";
-import { t as createOpencodeGoDeepSeekV4Wrapper } from "../../stream-CWgvJ9DW.js";
+import { t as createOpencodeGoDeepSeekV4Wrapper } from "../../stream-Do_ebc0t.js";
 //#region extensions/opencode-go/index.ts
 const PROVIDER_ID = "opencode-go";
 const OPENCODE_SHARED_PROFILE_IDS = ["opencode:default", "opencode-go:default"];

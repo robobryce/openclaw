@@ -1,5 +1,5 @@
 import { t as defineBundledChannelEntry } from "../../channel-entry-contract-CDckzrNG.js";
-import { t as registerDiscordSubagentHooks } from "../../subagent-hooks-api-DIqQ3d6T.js";
+import { t as registerDiscordSubagentHooks } from "../../subagent-hooks-api-DIE8LjmI.js";
 //#region extensions/discord/index.ts
 var discord_default = defineBundledChannelEntry({
 	id: "discord",

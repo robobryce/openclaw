@@ -1,19 +1,19 @@
 import { s as normalizeOptionalLowercaseString } from "../string-coerce-Bje8XVt9.js";
 import { i as formatErrorMessage } from "../errors-SdKPttvI.js";
 import { t as isContainerEnvironment } from "../container-environment-IJFnbn5j.js";
-import { i as getRuntimeConfig } from "../io-qSKtb3D6.js";
-import "../config-DgbftrzN.js";
-import { c as markGatewaySigusr1RestartHandled, d as resolveGatewayRestartDeferralTimeoutMs, f as scheduleGatewaySigusr1Restart, h as triggerOpenClawRestart, i as consumeGatewaySigusr1RestartAuthorization, l as peekGatewaySigusr1RestartReason, n as consumeGatewayRestartIntentPayloadSync, r as consumeGatewayRestartIntentSync, s as isGatewaySigusr1RestartExternallyAllowed, u as resetGatewayRestartStateForInProcessRestart } from "../restart-D508Yjx_.js";
+import { i as getRuntimeConfig } from "../io-BvGD_Bil.js";
+import "../config-_rpt9b2u.js";
+import { c as markGatewaySigusr1RestartHandled, d as resolveGatewayRestartDeferralTimeoutMs, f as scheduleGatewaySigusr1Restart, h as triggerOpenClawRestart, i as consumeGatewaySigusr1RestartAuthorization, l as peekGatewaySigusr1RestartReason, n as consumeGatewayRestartIntentPayloadSync, r as consumeGatewayRestartIntentSync, s as isGatewaySigusr1RestartExternallyAllowed, u as resetGatewayRestartStateForInProcessRestart } from "../restart-COZjHBbB.js";
 import { r as writeGatewayRestartHandoffSync } from "../restart-handoff-GcQHe_uU.js";
 import { o as getActiveEmbeddedRunCount } from "../run-state-BH17ZXhU.js";
 import { f as writeDiagnosticStabilityBundleForFailureSync } from "../diagnostic-stability-bundle-BQmoKlUz.js";
-import { m as waitForActiveEmbeddedRuns, n as abortEmbeddedPiRun } from "../runs-iynp0eXw.js";
+import { m as waitForActiveEmbeddedRuns, n as abortEmbeddedPiRun } from "../runs-B_4WBYd3.js";
 import { t as detectRespawnSupervisor } from "../supervisor-markers-DDMZuQoh.js";
 import { a as markUpdateRestartSentinelFailure } from "../restart-sentinel-DiEWRz2R.js";
 import { a as getActiveTaskCount, d as resetAllLanes, m as waitForActiveTasks, u as markGatewayDraining } from "../command-queue-CEwMqbuX.js";
-import { S as reloadTaskRegistryFromStore } from "../task-registry-iSTS0efK.js";
-import "../runtime-internal-Ci13K_Yk.js";
-import { n as getInspectableActiveTaskRestartBlockers } from "../task-registry.maintenance-DDt-by5z.js";
+import { S as reloadTaskRegistryFromStore } from "../task-registry-BaF4NUvh.js";
+import "../runtime-internal-haeGXAjT.js";
+import { n as getInspectableActiveTaskRestartBlockers } from "../task-registry.maintenance-CYe742pg.js";
 import { spawn } from "node:child_process";
 //#region src/infra/process-respawn.ts
 function isTruthy(value) {

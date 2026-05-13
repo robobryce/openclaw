@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as buildCliSpeechProvider } from "../../speech-provider-Dvs9bsIJ.js";
+import { t as buildCliSpeechProvider } from "../../speech-provider-hcb2coFE.js";
 //#region extensions/tts-local-cli/index.ts
 var tts_local_cli_default = definePluginEntry({
 	id: "tts-local-cli",

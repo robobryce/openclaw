@@ -1,5 +1,5 @@
 import { n as afterEach } from "../dist-4RsBJhMS.js";
-import { n as vi } from "../test.DNmyFkvJ-CvkqywXZ.js";
+import { n as vi } from "../test.DNmyFkvJ-bfyWEIqf.js";
 //#region src/plugin-sdk/test-helpers/provider-http-mocks.ts
 const providerHttpMocks = vi.hoisted(() => ({
 	resolveApiKeyForProviderMock: vi.fn(async () => ({ apiKey: "provider-key" })),

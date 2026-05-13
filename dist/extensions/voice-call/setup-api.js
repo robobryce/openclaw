@@ -1,7 +1,7 @@
 import { c as isRecord } from "../../utils-Cs_zUMxj.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { n as migrateVoiceCallLegacyConfigInput } from "../../config-compat-BCDcGh-i.js";
+import { n as migrateVoiceCallLegacyConfigInput } from "../../config-compat-DgSAUmHE.js";
 //#region extensions/voice-call/setup-api.ts
 function migrateVoiceCallPluginConfig(config) {
 	const rawVoiceCallConfig = config.plugins?.entries?.["voice-call"]?.config;

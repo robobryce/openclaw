@@ -4,7 +4,7 @@ let lineCardCommandPromise = null;
 async function loadLineCardCommand(api) {
 	lineCardCommandPromise ??= (async () => {
 		let registered = null;
-		const { registerLineCardCommand } = await import("../../card-command-BSzzkBbH.js");
+		const { registerLineCardCommand } = await import("../../card-command-DkfYFIuw.js");
 		registerLineCardCommand({
 			...api,
 			registerCommand(command) {

@@ -1,13 +1,13 @@
 import { t as loadPluginManifestRegistry } from "../manifest-registry-CHIgfMFu.js";
 import { a as parseSemver, n as isAtLeast } from "../runtime-guard-Bh62UvNQ.js";
 import { n as parseMinHostVersionRequirement } from "../min-host-version-Dm9ljpAH.js";
-import { t as pluginRegistrationContractRegistry } from "../registry-DEZTREV2.js";
+import { t as pluginRegistrationContractRegistry } from "../registry-B7KMganb.js";
 import { a as describe, c as it } from "../dist-4RsBJhMS.js";
-import { t as globalExpect } from "../test.DNmyFkvJ-CvkqywXZ.js";
-import { x as requireRegisteredProvider, y as registerProviderPlugins } from "../plugin-setup-wizard-BlngnOq5.js";
-import "../testing-DXdFbw1j.js";
+import { t as globalExpect } from "../test.DNmyFkvJ-bfyWEIqf.js";
+import { x as requireRegisteredProvider, y as registerProviderPlugins } from "../plugin-setup-wizard-BX2TD3WU.js";
+import "../testing-CbjTlejY.js";
 import { n as assertUniqueValues, t as BUNDLED_RUNTIME_SIDECAR_PATHS } from "../runtime-sidecar-paths-9bawfO61.js";
-import { a as registerTestPlugin, c as assertNoImportTimeSideEffects, i as createPluginRegistryFixture, n as loadBundledPluginPublicSurfaceSync, o as registerVirtualTestPlugin, r as resolveWorkspacePackagePublicModuleUrl, s as uniqueSortedStrings, t as loadBundledPluginPublicSurface } from "../public-surface-loader-osU09zva.js";
+import { a as registerTestPlugin, c as assertNoImportTimeSideEffects, i as createPluginRegistryFixture, n as loadBundledPluginPublicSurfaceSync, o as registerVirtualTestPlugin, r as resolveWorkspacePackagePublicModuleUrl, s as uniqueSortedStrings, t as loadBundledPluginPublicSurface } from "../public-surface-loader-lqAzNbV1.js";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs";
 import path from "node:path";

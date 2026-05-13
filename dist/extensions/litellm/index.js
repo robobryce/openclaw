@@ -1,10 +1,10 @@
 import { t as normalizeOptionalSecretInput } from "../../normalize-secret-input-Bh0uuswB.js";
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
-import "../../provider-auth-HUNImjoh.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
+import "../../provider-auth-auBtY7jV.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { o as buildSingleProviderApiKeyCatalog } from "../../provider-catalog-shared-Dh8sLNjN.js";
 import { i as applyLitellmConfig, r as LITELLM_DEFAULT_MODEL_REF } from "../../onboard-B1diy89y.js";
-import { t as buildLitellmImageGenerationProvider } from "../../image-generation-provider-CXQ8gX9o.js";
+import { t as buildLitellmImageGenerationProvider } from "../../image-generation-provider-BQoRo04A.js";
 import { t as buildLitellmProvider } from "../../provider-catalog-G8brAAhR.js";
 //#region extensions/litellm/index.ts
 const PROVIDER_ID = "litellm";

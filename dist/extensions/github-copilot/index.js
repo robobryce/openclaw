@@ -1,20 +1,20 @@
 import { s as normalizeOptionalLowercaseString } from "../../string-coerce-Bje8XVt9.js";
 import { o as coerceSecretRef } from "../../types.secrets-BgzzIHyp.js";
 import { l as resolveDefaultSecretProviderAlias } from "../../ref-contract-DQtMY1R7.js";
-import { n as ensureAuthProfileStore } from "../../store-D-rkbyr1.js";
+import { n as ensureAuthProfileStore } from "../../store-C57uqpQM.js";
 import { t as normalizeOptionalSecretInput } from "../../normalize-secret-input-Bh0uuswB.js";
 import { n as listProfilesForProvider } from "../../profile-list-C3fpPYkZ.js";
-import { o as upsertAuthProfileWithLock } from "../../profiles-DkUcgPLq.js";
-import { t as applyAuthProfileConfig } from "../../provider-auth-helpers-BBhowtGB.js";
-import "../../provider-auth-HUNImjoh.js";
-import "../../text-runtime-l35dVOXw.js";
+import { o as upsertAuthProfileWithLock } from "../../profiles-CXZVkqAd.js";
+import { t as applyAuthProfileConfig } from "../../provider-auth-helpers-Ds6sQVQ8.js";
+import "../../provider-auth-auBtY7jV.js";
+import "../../text-runtime-BwruZakL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { r as resolvePluginConfigObject } from "../../plugin-config-runtime-CTMobv4N.js";
-import { n as resolveCopilotForwardCompatModel, t as PROVIDER_ID } from "../../models-Co2-YK6L.js";
-import { t as resolveFirstGithubToken } from "../../auth-CsMSh43f.js";
-import { t as githubCopilotMemoryEmbeddingProviderAdapter } from "../../embeddings-BkAHVOmn.js";
-import { t as buildGithubCopilotReplayPolicy } from "../../replay-policy-CoHqH-6j.js";
-import { r as wrapCopilotProviderStream } from "../../stream-BlFEdCcV.js";
+import { n as resolveCopilotForwardCompatModel, t as PROVIDER_ID } from "../../models-Ht8HCqTp.js";
+import { t as resolveFirstGithubToken } from "../../auth-2xbWjlzW.js";
+import { t as githubCopilotMemoryEmbeddingProviderAdapter } from "../../embeddings-Djzcny7E.js";
+import { t as buildGithubCopilotReplayPolicy } from "../../replay-policy-4iuWLeHL.js";
+import { r as wrapCopilotProviderStream } from "../../stream-DSlSWRUb.js";
 //#region extensions/github-copilot/index.ts
 const COPILOT_ENV_VARS = [
 	"COPILOT_GITHUB_TOKEN",

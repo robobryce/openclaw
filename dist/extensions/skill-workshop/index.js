@@ -4,13 +4,13 @@ import { c as resolveDefaultAgentId } from "../../agent-scope-config-Bj1Ovf8G.js
 import { n as resolveAgentEffectiveModelPrimary } from "../../agent-scope-Bf757dCA.js";
 import { n as replaceFileAtomic } from "../../replace-file-Nprm-pSK.js";
 import { t as privateFileStore } from "../../private-file-store-B5mHCqlS.js";
-import { o as resolveDefaultModelForAgent } from "../../model-selection-BOeJUkj5.js";
+import { o as resolveDefaultModelForAgent } from "../../model-selection-CEBK4_Qq.js";
 import { l as jsonResult } from "../../common-DPSDd5uL.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
 import { n as resolveLivePluginConfigObject } from "../../plugin-config-runtime-CTMobv4N.js";
-import "../../agent-runtime-wTheAKlF.js";
+import "../../agent-runtime-Blj-HA_w.js";
 import { t as bumpSkillsSnapshotVersion } from "../../refresh-state-BZYpj0xT.js";
-import "../../api-DP-oBvFf.js";
+import "../../api-zLzOYcP_.js";
 import path from "node:path";
 import fs from "node:fs/promises";
 import { createHash, randomUUID } from "node:crypto";

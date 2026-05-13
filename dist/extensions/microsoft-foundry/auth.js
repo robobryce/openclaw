@@ -1,2 +1,2 @@
-import { n as entraIdAuthMethod, t as apiKeyAuthMethod } from "../../auth-CUTbG4nw.js";
+import { n as entraIdAuthMethod, t as apiKeyAuthMethod } from "../../auth-C28sBQNV.js";
 export { apiKeyAuthMethod, entraIdAuthMethod };

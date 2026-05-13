@@ -1,9 +1,9 @@
 import { u as createTopLevelChannelConfigAdapter } from "../../channel-config-helpers-C8BoXENU.js";
 import { n as describeAccountSnapshot } from "../../account-helpers-DNgnV8Mx.js";
 import { t as formatAllowFromLowercase } from "../../allow-from-DSPsd8yB.js";
-import { h as resolveMSTeamsCredentials } from "../../graph-users-4f6cOrcw.js";
+import { h as resolveMSTeamsCredentials } from "../../graph-users-lKpoxipl.js";
 import { t as MSTeamsChannelConfigSchema } from "../../config-schema-Dj2fLhBs.js";
-import { i as msteamsSetupAdapter, t as msteamsSetupWizard } from "../../setup-surface-CxODj_b3.js";
+import { i as msteamsSetupAdapter, t as msteamsSetupWizard } from "../../setup-surface-Cbnc9wRa.js";
 //#region extensions/msteams/src/channel.setup.ts
 const meta = {
 	id: "msteams",

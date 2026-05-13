@@ -1,8 +1,8 @@
 import { r as resolveProviderIdForAuth } from "../provider-auth-aliases-D0zA_nj2.js";
 import { a as resetGlobalHookRunner, i as initializeGlobalHookRunner } from "../hook-runner-global-DoDt9n3I.js";
-import { P as createEmptyPluginRegistry, x as setActivePluginRegistry, y as resetPluginRuntimeStateForTest } from "../runtime-DPCm5dpS.js";
+import { P as createEmptyPluginRegistry, x as setActivePluginRegistry, y as resetPluginRuntimeStateForTest } from "../runtime-D9WMzrM-.js";
 import { n as resetAdjustedParamsByToolCallIdForTests } from "../pi-tools.before-tool-call.state-DMsRrBLG.js";
-import { n as vi } from "../test.DNmyFkvJ-CvkqywXZ.js";
+import { n as vi } from "../test.DNmyFkvJ-bfyWEIqf.js";
 import { n as createMockPluginRegistry } from "../hooks.test-helpers-BqiMDO1R.js";
 //#region src/plugin-sdk/test-helpers/agents/auth-profile-runtime-contract.ts
 const AUTH_PROFILE_RUNTIME_CONTRACT = {

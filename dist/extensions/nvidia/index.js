@@ -1,4 +1,4 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { n as buildNvidiaProvider } from "../../provider-catalog-Colx5nuW.js";
 import { n as applyNvidiaConfig, t as NVIDIA_DEFAULT_MODEL_REF } from "../../onboard-BFqIeQUY.js";
 //#region extensions/nvidia/index.ts

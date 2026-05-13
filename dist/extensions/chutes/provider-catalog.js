@@ -1,2 +1,2 @@
-import { n as buildStaticChutesProvider, t as buildChutesProvider } from "../../provider-catalog-BFKWhfZL.js";
+import { n as buildStaticChutesProvider, t as buildChutesProvider } from "../../provider-catalog-HGA9SyeC.js";
 export { buildChutesProvider, buildStaticChutesProvider };

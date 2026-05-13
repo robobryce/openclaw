@@ -5,7 +5,7 @@ import { n as resolveInboundDebounceMs, t as createInboundDebouncer } from "../i
 import { i as resolveMentionGatingWithBypass, n as resolveInboundMentionDecision, r as resolveMentionGating, t as implicitMentionKindWhen } from "../mention-gating-KuO-YfdQ.js";
 import { n as logInboundDrop } from "../logging-Db0TgtK-.js";
 import { t as createDirectDmPreCryptoGuardPolicy } from "../direct-dm-guard-policy-7dLQZQ2i.js";
-import { t as dispatchInboundDirectDmWithRuntime } from "../direct-dm-DRn-eT9l.js";
-import { n as createChannelInboundDebouncer, r as shouldDebounceTextInbound, t as resolveInboundSessionEnvelopeContext } from "../channel-inbound-D08WPuYB.js";
+import { t as dispatchInboundDirectDmWithRuntime } from "../direct-dm-DRe7hb72.js";
+import { n as createChannelInboundDebouncer, r as shouldDebounceTextInbound, t as resolveInboundSessionEnvelopeContext } from "../channel-inbound-CKn0b_E9.js";
 import { n as toLocationContext, t as formatLocationText } from "../location-Bu8LBW49.js";
 export { buildMentionRegexes, createChannelInboundDebouncer, createDirectDmPreCryptoGuardPolicy, createInboundDebouncer, dispatchInboundDirectDmWithRuntime, formatInboundEnvelope, formatInboundFromLabel, formatLocationText, implicitMentionKindWhen, logInboundDrop, matchesMentionPatterns, matchesMentionWithExplicit, mergeInboundPathRoots, normalizeMentionText, resolveEnvelopeFormatOptions, resolveInboundDebounceMs, resolveInboundMentionDecision, resolveInboundSessionEnvelopeContext, resolveMentionGating, resolveMentionGatingWithBypass, shouldDebounceTextInbound, toLocationContext };

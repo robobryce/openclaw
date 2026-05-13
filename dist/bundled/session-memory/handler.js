@@ -7,7 +7,7 @@ import { o as resolveAgentWorkspaceDir } from "../../agent-scope-config-Bj1Ovf8G
 import { a as resolveAgentIdByWorkspacePath } from "../../agent-scope-Bf757dCA.js";
 import { t as createSubsystemLogger } from "../../subsystem-4YsHcs_C.js";
 import { i as hasInterSessionUserProvenance } from "../../input-provenance-CMC8oaOl.js";
-import { t as generateSlugViaLLM } from "../../llm-slug-generator-GU5z77GP.js";
+import { t as generateSlugViaLLM } from "../../llm-slug-generator-DQN90Uxs.js";
 import { r as resolveHookConfig } from "../../config-axGvkXM2.js";
 import path from "node:path";
 import fs from "node:fs/promises";

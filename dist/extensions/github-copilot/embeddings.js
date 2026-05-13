@@ -1,2 +1,2 @@
-import { t as githubCopilotMemoryEmbeddingProviderAdapter } from "../../embeddings-BkAHVOmn.js";
+import { t as githubCopilotMemoryEmbeddingProviderAdapter } from "../../embeddings-Djzcny7E.js";
 export { githubCopilotMemoryEmbeddingProviderAdapter };

@@ -1,6 +1,6 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { n as resolveBedrockConfigApiKey } from "../../discovery-shared-ClRIIP0e.js";
-import { t as migrateAmazonBedrockLegacyConfig } from "../../config-compat-CQlkpPEv.js";
+import { n as resolveBedrockConfigApiKey } from "../../discovery-shared-C8GVhyJV.js";
+import { t as migrateAmazonBedrockLegacyConfig } from "../../config-compat-DB8nmTbn.js";
 //#region extensions/amazon-bedrock/setup-api.ts
 var setup_api_default = definePluginEntry({
 	id: "amazon-bedrock",

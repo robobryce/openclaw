@@ -2,14 +2,14 @@ import { a as resolveAgentDir, o as resolveAgentWorkspaceDir } from "./agent-sco
 import "./agent-scope-Bf757dCA.js";
 import { n as DEFAULT_MODEL, r as DEFAULT_PROVIDER } from "./defaults-4m7JJmD2.js";
 import { i as resolveSessionFilePath, u as resolveStorePath } from "./paths-BmdY-Qui.js";
-import { t as loadSessionStore } from "./store-load-CZSUCJqj.js";
-import { i as saveSessionStore, o as updateSessionStore, s as updateSessionStoreEntry } from "./store-DPr34eb5.js";
-import "./sessions-w65gbqiC.js";
-import { p as resolveThinkingDefault } from "./model-selection-BOeJUkj5.js";
+import { t as loadSessionStore } from "./store-load-D1NDZfCL.js";
+import { i as saveSessionStore, o as updateSessionStore, s as updateSessionStoreEntry } from "./store-ykbL7YTc.js";
+import "./sessions-3sxpPPQt.js";
+import { p as resolveThinkingDefault } from "./model-selection-CEBK4_Qq.js";
 import { t as resolveAgentTimeoutMs } from "./timeout-BqDEuVvO.js";
 import { l as ensureAgentWorkspace } from "./workspace-Bn82tdyb.js";
 import { n as resolveAgentIdentity } from "./identity-BJqKZTLs.js";
-import { t as runEmbeddedPiAgent } from "./pi-embedded-DuaeIqd0.js";
+import { t as runEmbeddedPiAgent } from "./pi-embedded-CLQaf9Ey.js";
 //#region src/extensionAPI.ts
 if (process.env.VITEST !== "true" && process.env.OPENCLAW_SUPPRESS_EXTENSION_API_WARNING !== "1") process.emitWarning("openclaw/extension-api is deprecated. Migrate to api.runtime.agent.* or focused openclaw/plugin-sdk/<subpath> imports. See https://docs.openclaw.ai/plugins/sdk-migration", {
 	code: "OPENCLAW_EXTENSION_API_DEPRECATED",

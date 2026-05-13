@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import { t as registerAmazonBedrockPlugin } from "../../register.sync.runtime-omGbA-EI.js";
+import { t as registerAmazonBedrockPlugin } from "../../register.sync.runtime-Br1sA_C1.js";
 //#region extensions/amazon-bedrock/index.ts
 var amazon_bedrock_default = definePluginEntry({
 	id: "amazon-bedrock",

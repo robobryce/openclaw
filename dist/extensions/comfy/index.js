@@ -1,9 +1,9 @@
-import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-Bi9fMrS_.js";
+import { t as createProviderApiKeyAuthMethod } from "../../provider-api-key-auth-DxjSepn5.js";
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../provider-auth-api-key-h8q-fVZi.js";
-import { t as buildComfyImageGenerationProvider } from "../../image-generation-provider-DjZbAUo1.js";
-import { t as buildComfyMusicGenerationProvider } from "../../music-generation-provider-CAEj3Ce1.js";
-import { t as buildComfyVideoGenerationProvider } from "../../video-generation-provider-BaCKyWxw.js";
+import "../../provider-auth-api-key-0yETSMAA.js";
+import { t as buildComfyImageGenerationProvider } from "../../image-generation-provider-BayWEIas.js";
+import { t as buildComfyMusicGenerationProvider } from "../../music-generation-provider-BEGwnA1A.js";
+import { t as buildComfyVideoGenerationProvider } from "../../video-generation-provider-CACaY5mw.js";
 //#region extensions/comfy/index.ts
 const PROVIDER_ID = "comfy";
 var comfy_default = definePluginEntry({

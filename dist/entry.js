@@ -451,8 +451,8 @@ async function tryHandleRootHelpFastPath(argv, deps = {}) {
 			await deps.outputRootHelp();
 			return true;
 		}
-		if (!(deps.outputPrecomputedRootHelpText ?? (await import("./root-help-metadata-B7VKrHdC.js")).outputPrecomputedRootHelpText)()) {
-			const { outputRootHelp } = await import("./root-help-DhEX9plG.js");
+		if (!(deps.outputPrecomputedRootHelpText ?? (await import("./root-help-metadata-BXYojLpi.js")).outputPrecomputedRootHelpText)()) {
+			const { outputRootHelp } = await import("./root-help-CA-_MkNP.js");
 			await outputRootHelp();
 		}
 		return true;

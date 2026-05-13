@@ -1,7 +1,7 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { n as applyTogetherConfig, t as TOGETHER_DEFAULT_MODEL_REF } from "../../onboard-DL3llb8C.js";
 import { t as buildTogetherProvider } from "../../provider-catalog-NEMbRgea.js";
-import { t as buildTogetherVideoGenerationProvider } from "../../video-generation-provider-Db4d_lhn.js";
+import { t as buildTogetherVideoGenerationProvider } from "../../video-generation-provider-YSeiNfKI.js";
 var together_default = defineSingleProviderPluginEntry({
 	id: "together",
 	name: "Together Provider",

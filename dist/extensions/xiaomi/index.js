@@ -1,9 +1,9 @@
-import { t as defineSingleProviderPluginEntry } from "../../provider-entry-e7f9D9gm.js";
+import { t as defineSingleProviderPluginEntry } from "../../provider-entry-SdFnn7C8.js";
 import { n as PROVIDER_LABELS } from "../../provider-usage.shared-CordmNM_.js";
 import "../../provider-usage-CHq0GPqe.js";
 import { n as buildXiaomiProvider } from "../../provider-catalog-DZS8ZLcN.js";
 import { n as applyXiaomiConfig, t as XIAOMI_DEFAULT_MODEL_REF } from "../../onboard-STGP06AJ.js";
-import { t as buildXiaomiSpeechProvider } from "../../speech-provider-Chl9Zo3k.js";
+import { t as buildXiaomiSpeechProvider } from "../../speech-provider-EwL1HQli.js";
 var xiaomi_default = defineSingleProviderPluginEntry({
 	id: "xiaomi",
 	name: "Xiaomi Provider",

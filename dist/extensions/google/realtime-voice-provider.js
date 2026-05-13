@@ -1,9 +1,9 @@
 import { c as normalizeOptionalString } from "../../string-coerce-Bje8XVt9.js";
 import { u as normalizeResolvedSecretInputString } from "../../types.secrets-BgzzIHyp.js";
-import "../../text-runtime-l35dVOXw.js";
+import "../../text-runtime-BwruZakL.js";
 import "../../secret-input-CkHWmqIu.js";
-import { O as REALTIME_VOICE_AUDIO_FORMAT_G711_ULAW_8KHZ, c as REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME, k as REALTIME_VOICE_AUDIO_FORMAT_PCM16_24KHZ } from "../../session-runtime-TUPp0d49.js";
-import { i as resamplePcm, n as mulawToPcm, t as convertPcmToMulaw8k } from "../../realtime-voice-DHQurcps.js";
+import { O as REALTIME_VOICE_AUDIO_FORMAT_G711_ULAW_8KHZ, c as REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME, k as REALTIME_VOICE_AUDIO_FORMAT_PCM16_24KHZ } from "../../session-runtime-5e0Akz11.js";
+import { i as resamplePcm, n as mulawToPcm, t as convertPcmToMulaw8k } from "../../realtime-voice-Bt7mPoc5.js";
 import { t as createGoogleGenAI } from "../../google-genai-runtime-81yIkBsB.js";
 import { randomUUID } from "node:crypto";
 //#region extensions/google/realtime-voice-provider.ts

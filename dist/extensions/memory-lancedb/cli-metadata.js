@@ -1,5 +1,5 @@
 import { t as definePluginEntry } from "../../plugin-entry-BWtmlM8X.js";
-import "../../core-C1k2IcgS.js";
+import "../../core-BGteDoGl.js";
 //#region extensions/memory-lancedb/cli-metadata.ts
 var cli_metadata_default = definePluginEntry({
 	id: "memory-lancedb",
